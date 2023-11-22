@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_origin: {fileID: 8204935102100122}
   m_fireRate: 0.1
-  m_poolSize: 20
+  m_poolSize: 100
 --- !u!114 &8042468567757986665
 MonoBehaviour:
   m_ObjectHideFlags: 0
