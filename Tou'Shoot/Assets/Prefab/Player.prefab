@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_origin: {fileID: 8204935102100122}
-  m_bullet: {fileID: 3492084828355203854, guid: 6cf5c83a41ed5fc49bd599167e1e5a92, type: 3}
   m_fireRate: 0.1
+  m_poolSize: 20
 --- !u!114 &8042468567757986665
 MonoBehaviour:
   m_ObjectHideFlags: 0

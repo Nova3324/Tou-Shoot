@@ -333,7 +333,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &189929732
 RectTransform:
@@ -349,7 +349,7 @@ RectTransform:
   m_Children:
   - {fileID: 1541518212}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -976,7 +976,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1561961872
 MonoBehaviour:
@@ -993,7 +993,8 @@ MonoBehaviour:
   m_pools:
   - tag: Player Bullet
     prefab: {fileID: 3492084828355203854, guid: 6cf5c83a41ed5fc49bd599167e1e5a92, type: 3}
-    size: 20
+    size: 0
+  m_poolSize: 100
 --- !u!1 &1929887655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2451225522217941287, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2451225522217941287, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_LocalPosition.x

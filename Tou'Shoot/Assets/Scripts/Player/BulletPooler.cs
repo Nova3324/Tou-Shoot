@@ -23,12 +23,14 @@ public class BulletPooler : MonoBehaviour
 
     public List<Pool> m_pools;
     public Dictionary<string, Queue<GameObject>> m_poolDictionary;
+    [HideInInspector] public int m_poolSize;
     void Start()
     {
         m_poolDictionary = new Dictionary<string, Queue<GameObject>>();   
 
         foreach(Pool pool in m_pools) 
-        { 
+        {
+            pool.size = m_poolSize;
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for(int i = 0; i < pool.size; i++) 
