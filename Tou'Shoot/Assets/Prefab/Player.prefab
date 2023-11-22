@@ -99,6 +99,8 @@ GameObject:
   - component: {fileID: 7338289463651365558}
   - component: {fileID: 8917560569933585669}
   - component: {fileID: 7390899510795952257}
+  - component: {fileID: 2448588488861169659}
+  - component: {fileID: 8042468567757986665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -297,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c82cbb904c69a54190e2fc0807cab71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_canFire: 0
 --- !u!114 &7390899510795952257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +310,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8381f95c9123997498ed87aa556a025a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2448588488861169659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280649610917260805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab2b4810fe26454584682e09c85ab88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_origin: {fileID: 8204935102100122}
+  m_bullet: {fileID: 3492084828355203854, guid: 6cf5c83a41ed5fc49bd599167e1e5a92, type: 3}
+  m_fireRate: 0.1
+--- !u!114 &8042468567757986665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280649610917260805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808b1f62eb7453647bb4123a29b931f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5345528436653208701
@@ -338,7 +368,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.516, y: 0.516, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8204935102100122}
   m_Father: {fileID: 2451225522217941287}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -442,3 +473,34 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!1 &7364121779081731933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8204935102100122}
+  m_Layer: 0
+  m_Name: Fire Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8204935102100122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364121779081731933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.578521, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7208404248965138653}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

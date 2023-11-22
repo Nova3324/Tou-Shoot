@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 94968917}
   - component: {fileID: 94968916}
   - component: {fileID: 94968915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 322499927}
   - component: {fileID: 322499929}
   - component: {fileID: 322499928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,19 @@ MonoBehaviour:
     m_ActionId: 23643ac3-6e76-42e3-8e4b-58fc9866d03f
     m_ActionName: Game/Move[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655908341}
+        m_TargetAssemblyTypeName: InputsController, Assembly-CSharp
+        m_MethodName: onFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2cb6a006-cd11-44eb-894c-30878b7a1567
     m_ActionName: Game/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -815,7 +827,7 @@ GameObject:
   - component: {fileID: 1545991439}
   - component: {fileID: 1545991441}
   - component: {fileID: 1545991440}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1035,7 @@ GameObject:
   - component: {fileID: 2034517870}
   - component: {fileID: 2034517872}
   - component: {fileID: 2034517871}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,6 +1209,10 @@ PrefabInstance:
     - target: {fileID: 5280649610917260805, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364121779081731933, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
