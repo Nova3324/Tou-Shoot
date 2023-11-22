@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FirePlayer : MonoBehaviour
 {
-    [SerializeField] Transform m_origin;
-    [SerializeField] GameObject m_bullet;
     PlayerController m_playerController;
+    BulletPooler m_bulletPooler;
+    
+    
+    [SerializeField] Transform m_origin;
     [SerializeField] private float m_fireRate = 1f;
     private float m_nextFire = 0f;
 
     private void Start()
     {
         m_playerController = GetComponent<PlayerController>();
+        m_bulletPooler = BulletPooler.Instance;
     }
 
     private void Update()
@@ -29,7 +32,7 @@ public class FirePlayer : MonoBehaviour
         if (SetFireBool() && Time.time > m_nextFire)
         {
             m_nextFire = Time.time + m_fireRate;
-            Instantiate(m_bullet, m_origin.position, Quaternion.identity);
+            m_bulletPooler.SpawnFromPool("Player Bullet", m_origin.position, Quaternion.identity);
         }
     }
 }
