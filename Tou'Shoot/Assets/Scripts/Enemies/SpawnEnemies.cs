@@ -6,12 +6,28 @@ public class Enemies : MonoBehaviour
 {
     [SerializeField] private List<GameObject> m_enemyList = new List<GameObject>();
     [SerializeField] private List<GameObject> m_spawnPoints = new List<GameObject>();
+    public List<GameObject> m_enemiesOnTheMap = new List<GameObject>();
     
     [SerializeField] private int m_WaitForSpawn;
     private int m_maxEnemies;
     private int m_index = 0;
     
     private bool m_canSpawn = true;
+
+    public static Enemies Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(this);
+            Debug.Log("There is two Enemies");
+            return;
+        }
+            
+    }
     void Start()
     {
         m_maxEnemies = m_enemyList.Count;
@@ -24,7 +40,8 @@ public class Enemies : MonoBehaviour
         {
             if (m_canSpawn)
             {
-                Instantiate(m_enemyList[m_index], m_spawnPoints[m_index].transform.position, m_spawnPoints[m_index].transform.rotation);
+                GameObject obj = Instantiate(m_enemyList[m_index], m_spawnPoints[m_index].transform.position, m_spawnPoints[m_index].transform.rotation);
+                m_enemiesOnTheMap.Add(obj);
                 m_index++;
 
                 m_canSpawn = false;

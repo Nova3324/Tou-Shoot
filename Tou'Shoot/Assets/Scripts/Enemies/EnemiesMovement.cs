@@ -13,6 +13,7 @@ public class EnemiesMovement : MonoBehaviour
     private bool m_roundTrip = true;
     private bool m_canMove = true;
     [SerializeField] private bool m_loop;
+    [SerializeField] private AnimationCurve m_curve; 
     void Start()
     {
         m_currentPosition = transform.position;
@@ -29,7 +30,8 @@ public class EnemiesMovement : MonoBehaviour
         {
             m_elapsedTime += Time.deltaTime;
             float time = m_elapsedTime / m_time;
-            transform.position = Vector3.Lerp(m_currentPosition, m_points[m_index].position, time);
+
+            transform.position = Vector3.LerpUnclamped(m_currentPosition, m_points[m_index].position, m_curve.Evaluate(time));
 
             if (time >= 1)
             {

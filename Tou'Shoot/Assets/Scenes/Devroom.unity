@@ -1513,6 +1513,7 @@ MonoBehaviour:
   - {fileID: 359929569}
   - {fileID: 1755678451}
   - {fileID: 372096478}
+  m_enemiesOnTheMap: []
   m_WaitForSpawn: 3
 --- !u!1001 &5934539495266213267
 PrefabInstance:
@@ -1569,10 +1570,6 @@ PrefabInstance:
     - target: {fileID: 5280649610917260805, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364121779081731933, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
-      propertyPath: m_Icon
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
