@@ -36,7 +36,6 @@ public class EnemiesMovement : MonoBehaviour
                 m_canMove = false;
                 StartCoroutine(WaitForMove());
             }
-            Debug.Log(time);
         }
     }
 
