@@ -13,14 +13,10 @@ public class BulletDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
+        if(collision.gameObject.CompareTag("Player Bullet"))
         {
             m_enemyLife.TakeDamage(m_damage);
             collision.gameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("This object don't have Bullet tag");
         }
     }
 }

@@ -6,6 +6,7 @@ public class EnemiesMovement : MonoBehaviour
 {
     [SerializeField] private List<Transform> m_points = new List<Transform>();
     [SerializeField] private float m_time;
+    [SerializeField, Range(0,5)] private float m_rotationTime;
 
     private Vector3 m_currentPosition;
     [SerializeField] private int m_index;
@@ -22,6 +23,12 @@ public class EnemiesMovement : MonoBehaviour
     void Update()
     {
         Movements();
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        transform.Rotate(0, 0, 10 * m_rotationTime * Time.deltaTime);
     }
 
     private void Movements()

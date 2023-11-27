@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 94968917}
   - component: {fileID: 94968916}
   - component: {fileID: 94968915}
+  - component: {fileID: 94968918}
   m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
@@ -253,6 +254,18 @@ Transform:
   m_Father: {fileID: 1321662488}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &94968918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94968914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517565ff4c70836438b9b4f134fef41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &189929728
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +380,7 @@ GameObject:
   - component: {fileID: 322499927}
   - component: {fileID: 322499929}
   - component: {fileID: 322499928}
+  - component: {fileID: 322499930}
   m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
@@ -486,6 +500,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &322499930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322499926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517565ff4c70836438b9b4f134fef41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359929569
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +814,37 @@ MonoBehaviour:
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &1053423884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053423885}
+  m_Layer: 0
+  m_Name: Bullet Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1053423885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053423884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4830112, y: -1.5978264, z: 2.3000872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1238063823
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1010,7 @@ GameObject:
   - component: {fileID: 1545991439}
   - component: {fileID: 1545991441}
   - component: {fileID: 1545991440}
+  - component: {fileID: 1545991442}
   m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
@@ -1072,6 +1130,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1545991442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545991438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517565ff4c70836438b9b4f134fef41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1561961870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1190,54 @@ MonoBehaviour:
   - tag: Player Bullet
     prefab: {fileID: 3492084828355203854, guid: 6cf5c83a41ed5fc49bd599167e1e5a92, type: 3}
     size: 0
+  - tag: 1st Enemy Bullet North
+    prefab: {fileID: 3492084828355203854, guid: 980a0c209e513d443bb1e25daac1546d, type: 3}
+    size: 50
+  - tag: 1st Enemy Bullet South
+    prefab: {fileID: 3492084828355203854, guid: 4952569aafc47dc4188218b4009dacb4, type: 3}
+    size: 50
+  - tag: 1st Enemy Bullet East
+    prefab: {fileID: 3492084828355203854, guid: 77db493254def294db609a26f162743c, type: 3}
+    size: 50
+  - tag: 1st Enemy Bullet West
+    prefab: {fileID: 3492084828355203854, guid: 794ffd562dca21b42b70f19e3abf1cc1, type: 3}
+    size: 50
+  - tag: 2nd Enemy Bullet North
+    prefab: {fileID: 3492084828355203854, guid: 3751b97bd687e8b41bd3c754472c57e9, type: 3}
+    size: 50
+  - tag: 2nd Enemy Bullet South
+    prefab: {fileID: 3492084828355203854, guid: 0e91fc40024cf5f4bb2f70d3e16c66f2, type: 3}
+    size: 50
+  - tag: 2nd Enemy Bullet East
+    prefab: {fileID: 3492084828355203854, guid: 15bda0babaf058e439e7394a0a6b6f6a, type: 3}
+    size: 50
+  - tag: 2nd Enemy Bullet West
+    prefab: {fileID: 3492084828355203854, guid: 1512ed0f711cc224db0299ea3d97798e, type: 3}
+    size: 50
+  - tag: 3rd Enemy Bullet North
+    prefab: {fileID: 3492084828355203854, guid: 2813ea486595354498d4c20bc1a7a638, type: 3}
+    size: 25
+  - tag: 3rd Enemy Bullet South
+    prefab: {fileID: 3492084828355203854, guid: 68409bda868fed14bbc89aee9277a9d0, type: 3}
+    size: 25
+  - tag: 3rd Enemy Bullet East
+    prefab: {fileID: 3492084828355203854, guid: 172f15ded03d73f468ef04d1bd6f6602, type: 3}
+    size: 25
+  - tag: 3rd Enemy Bullet West
+    prefab: {fileID: 3492084828355203854, guid: 9823f3bb60d606b45b163014ee7a706a, type: 3}
+    size: 25
+  - tag: 4th Enemy Bullet North
+    prefab: {fileID: 3492084828355203854, guid: 9d92a39f99edea34695bd8fbb7ad6a24, type: 3}
+    size: 50
+  - tag: 4th Enemy Bullet South
+    prefab: {fileID: 3492084828355203854, guid: dd93e75f40f08d847b6de7c724d05e45, type: 3}
+    size: 50
+  - tag: 4th Enemy Bullet East
+    prefab: {fileID: 3492084828355203854, guid: 9293d32eeaf71db46a72550588d0be03, type: 3}
+    size: 50
+  - tag: 4th Enemy Bullet West
+    prefab: {fileID: 3492084828355203854, guid: ce2db7550507a4a4ca4d859c66edc86d, type: 3}
+    size: 50
   m_poolSize: 100
 --- !u!1 &1746919631
 GameObject:
@@ -1336,6 +1454,7 @@ GameObject:
   - component: {fileID: 2034517870}
   - component: {fileID: 2034517872}
   - component: {fileID: 2034517871}
+  - component: {fileID: 2034517873}
   m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
@@ -1455,6 +1574,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2034517873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034517869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517565ff4c70836438b9b4f134fef41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105412203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,16 +1636,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enemyList:
   - {fileID: 5544242879929527243, guid: 5884e6fc04fff2d42828f144338b6535, type: 3}
-  - {fileID: 7271768233237642997, guid: 0d0f19943becc3f40b83aa66d20708e0, type: 3}
-  - {fileID: 732035815873346514, guid: ed41ba0bbb632ae49b4d74235805e599, type: 3}
-  - {fileID: 5164243182532123734, guid: 1b151fd6a0c2b1b47a3a2ba9d1ee8d83, type: 3}
+  - {fileID: 5544242879929527243, guid: fa491c64e08d0d44bb561ef3aa73a2be, type: 3}
+  - {fileID: 5544242879929527243, guid: 9ca7771371f875d4da98818c415bb977, type: 3}
+  - {fileID: 5544242879929527243, guid: c8596da09b9111143a74eb5fc94dbb71, type: 3}
   m_spawnPoints:
   - {fileID: 1746919631}
   - {fileID: 359929569}
   - {fileID: 1755678451}
   - {fileID: 372096478}
   m_enemiesOnTheMap: []
-  m_WaitForSpawn: 3
+  m_WaitForSpawn: 15
 --- !u!1001 &5934539495266213267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1529,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2451225522217941287, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.92
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 2451225522217941287, guid: a8c0461ab9c42dc4c834dbaa11f9ae09, type: 3}
       propertyPath: m_LocalPosition.y

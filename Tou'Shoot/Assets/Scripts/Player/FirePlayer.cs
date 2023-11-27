@@ -10,14 +10,14 @@ public class FirePlayer : MonoBehaviour
     
     [SerializeField] Transform m_origin;
     [SerializeField] private float m_fireRate = 1f;
-    [SerializeField] private int m_poolSize;
+    [SerializeField] private int m_NumberOfBullets;
     private float m_nextFire = 0f;
 
     private void Start()
     {
         m_playerController = GetComponent<PlayerController>();
         m_bulletPooler = BulletPooler.Instance;
-        m_bulletPooler.m_poolSize = m_poolSize;
+        m_bulletPooler.m_poolSize = m_NumberOfBullets;
     }
 
     private void Update()

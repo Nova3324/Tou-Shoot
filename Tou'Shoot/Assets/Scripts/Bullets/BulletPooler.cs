@@ -30,12 +30,13 @@ public class BulletPooler : MonoBehaviour
 
         foreach(Pool pool in m_pools) 
         {
-            pool.size = m_poolSize;
+            if(pool.tag == "Player Bullet")
+                pool.size = m_poolSize;
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for(int i = 0; i < pool.size; i++) 
             {
-                GameObject obj = Instantiate(pool.prefab);
+                GameObject obj = Instantiate(pool.prefab,GameObject.Find("Bullet Manager").transform);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }

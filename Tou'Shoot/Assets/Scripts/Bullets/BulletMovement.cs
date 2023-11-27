@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
@@ -14,19 +15,11 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         BulletMove();
-        DisableBullet();
     }
 
-    private void BulletMove()
+    public void BulletMove()
     {
         m_rigidbody.velocity = Vector2.up * m_speed;
-    }
 
-    private void DisableBullet()
-    {
-        if(transform.position.y > 5)
-        {
-            gameObject.SetActive(false);
-        }
     }
 }
