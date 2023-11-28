@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EndGame : MonoBehaviour
@@ -8,6 +9,8 @@ public class EndGame : MonoBehaviour
 
     [SerializeField] private GameObject m_win;
     [SerializeField] private GameObject m_lose;
+
+    [SerializeField] private TMP_Text m_loseScoreUI, m_winScoreUI;
     private void Awake()
     {
         if(Instance == null)
@@ -35,12 +38,16 @@ public class EndGame : MonoBehaviour
         if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
         {
             m_win.SetActive(true);
+            m_winScoreUI.SetText(Score.Instance.m_score.ToString());
             Time.timeScale = 0;
+            GameObject.Find("Player").gameObject.SetActive(false);
         }
         else
         {
             m_lose.SetActive(true);
+            m_loseScoreUI.SetText(Score.Instance.m_score.ToString());
             Time.timeScale = 0;
+            GameObject.Find("Player").gameObject.SetActive(false);
         }
     }
 }

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &45955468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8300344768430041975, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-  m_PrefabInstance: {fileID: 982325665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &94968914
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,8 +807,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: High Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
-  m_sharedMaterial: {fileID: -6063195840441121209, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
+  m_sharedMaterial: {fileID: -8555366797849950609, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1095,11 +1090,6 @@ MonoBehaviour:
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1 &733167284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1155937209937797124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-  m_PrefabInstance: {fileID: 982325665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &982325665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,14 +1098,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1892785362813755429, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_win
-      value: 
-      objectReference: {fileID: 45955468}
-    - target: {fileID: 1892785362813755429, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_lose
-      value: 
-      objectReference: {fileID: 733167284}
     - target: {fileID: 2536488330469388453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1199,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 2536488330469388453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227607588014525703, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 7965265634920405453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_Name
@@ -1300,8 +1286,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TOU'SHOUT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
-  m_sharedMaterial: {fileID: -6063195840441121209, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
+  m_sharedMaterial: {fileID: -8555366797849950609, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1648,8 +1634,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: By Cedrico
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
-  m_sharedMaterial: {fileID: -6063195840441121209, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
+  m_sharedMaterial: {fileID: -8555366797849950609, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1783,8 +1769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
-  m_sharedMaterial: {fileID: -6063195840441121209, guid: 92240a2abfd092d41b86b0df563181ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
+  m_sharedMaterial: {fileID: -8555366797849950609, guid: 6a1c06ccadd280f4a8425f7dca70335b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2580,7 +2566,7 @@ MonoBehaviour:
   - {fileID: 1755678451}
   - {fileID: 372096478}
   m_enemiesOnTheMap: []
-  m_WaitForSpawn: 15
+  m_WaitForSpawn: 5
 --- !u!1001 &5934539495266213267
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -703,7 +703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5908400838722221797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4462296460786867107}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3127176286235390091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,7 +1588,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6506600224151251925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4462296460786867107}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7965265634920405453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1614,7 @@ GameObject:
   - component: {fileID: 5304804856263664932}
   - component: {fileID: 5006304688512206815}
   - component: {fileID: 1892785362813755429}
+  - component: {fileID: 4462296460786867107}
   m_Layer: 5
   m_Name: Endgame
   m_TagString: Untagged
@@ -1694,8 +1719,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47b260e509636b459f5f392250a8e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_win: {fileID: 0}
-  m_lose: {fileID: 0}
+  m_win: {fileID: 8300344768430041975}
+  m_lose: {fileID: 1155937209937797124}
+  m_loseScoreUI: {fileID: 4576081604226593323}
+  m_winScoreUI: {fileID: 4532758908271484704}
+--- !u!114 &4462296460786867107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965265634920405453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f5c86ca8f36714bba9f1973cd1c541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8300344768430041975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,4 +1973,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3528749319970651682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4462296460786867107}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
