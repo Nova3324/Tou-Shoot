@@ -150,8 +150,8 @@ GameObject:
   - component: {fileID: 7390899510795952257}
   - component: {fileID: 2448588488861169659}
   - component: {fileID: 8042468567757986665}
-  - component: {fileID: 1799373129625181941}
   - component: {fileID: 2099370875416819435}
+  - component: {fileID: 7387298331988247128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,7 +174,7 @@ Transform:
   - {fileID: 7208404248965138653}
   - {fileID: 6369334809125666184}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1718646128803193421
 SpriteRenderer:
@@ -390,18 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808b1f62eb7453647bb4123a29b931f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1799373129625181941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280649610917260805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47b260e509636b459f5f392250a8e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2099370875416819435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,8 +403,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_score: 0
+  m_highScore: 0
   m_timeSinceStart: 0
   m_remainingEnemies: 0
+  m_scoreUI: {fileID: 0}
+  m_highScoreUI: {fileID: 0}
+--- !u!114 &7387298331988247128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280649610917260805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da48758b2fe6584ebf2911ff90ef79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5345528436653208701
 GameObject:
   m_ObjectHideFlags: 0

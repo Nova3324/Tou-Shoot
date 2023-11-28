@@ -7,6 +7,8 @@ public class PlayerDeath : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy Bullet"))
         {
             Debug.Log("Player Death");
+            SaveData.Instance.SaveToJSON();
+            EndGame.Instance.DisplayTheRightMenu();
         }
     }
 }

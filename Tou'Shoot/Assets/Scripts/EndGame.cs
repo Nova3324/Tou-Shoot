@@ -5,6 +5,9 @@ using UnityEngine;
 public class EndGame : MonoBehaviour
 {
     public static EndGame Instance;
+
+    [SerializeField] private GameObject m_win;
+    [SerializeField] private GameObject m_lose;
     private void Awake()
     {
         if(Instance == null)
@@ -21,8 +24,23 @@ public class EndGame : MonoBehaviour
     { 
         if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
         {
-            Debug.Log("The Game is Finish");
+            DisplayTheRightMenu();
             Score.Instance.LastEnemyIsDead();
+            SaveData.Instance.SaveToJSON();
+        }
+    }
+
+    public void DisplayTheRightMenu()
+    {
+        if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
+        {
+            m_win.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            m_lose.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
