@@ -40,9 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059761810788132397}
-  - component: {fileID: 8283131903467428173}
   - component: {fileID: 2988743833543858212}
   - component: {fileID: 113902119841156150}
+  - component: {fileID: 5184935495271404491}
   m_Layer: 0
   m_Name: Life Collider
   m_TagString: Untagged
@@ -65,7 +65,32 @@ Transform:
   m_Father: {fileID: 3363268539672746509}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8283131903467428173
+--- !u!114 &2988743833543858212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309637974957939445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32b651da937f944499a0fab48556140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_life: 100
+--- !u!114 &113902119841156150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309637974957939445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756ac7d08ac4c38408e28d30aa6c9ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &5184935495271404491
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,37 +119,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2988743833543858212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309637974957939445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32b651da937f944499a0fab48556140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_life: 100
---- !u!114 &113902119841156150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309637974957939445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756ac7d08ac4c38408e28d30aa6c9ee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1432519998158793677
 GameObject:
   m_ObjectHideFlags: 0
