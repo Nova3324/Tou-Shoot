@@ -23,6 +23,7 @@ public class EnemyLife : MonoBehaviour
         {
             Enemies.Instance.m_enemiesOnTheMap.Remove(transform.parent.parent.gameObject);
             EndGame.Instance.CheckIfTheGameIsFinish();
+            Score.Instance.EnemyDeath();
             transform.parent.parent.gameObject.SetActive(false);
         }
     }

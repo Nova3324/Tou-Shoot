@@ -22,6 +22,7 @@ public class EndGame : MonoBehaviour
         if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
         {
             Debug.Log("The Game is Finish");
+            Score.Instance.LastEnemyIsDead();
         }
     }
 }

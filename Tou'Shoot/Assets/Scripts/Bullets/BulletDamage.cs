@@ -16,6 +16,7 @@ public class BulletDamage : MonoBehaviour
         if(collision.gameObject.CompareTag("Player Bullet"))
         {
             m_enemyLife.TakeDamage(m_damage);
+            Score.Instance.EnemyHit();
             collision.gameObject.SetActive(false);
         }
     }
