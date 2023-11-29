@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 2448588488861169659}
   - component: {fileID: 8042468567757986665}
   - component: {fileID: 2099370875416819435}
-  - component: {fileID: 7387298331988247128}
   - component: {fileID: 1873421619217615079}
   m_Layer: 0
   m_Name: Player
@@ -355,18 +354,6 @@ MonoBehaviour:
   m_remainingEnemies: 0
   m_scoreUI: {fileID: 0}
   m_highScoreUI: {fileID: 0}
---- !u!114 &7387298331988247128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280649610917260805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da48758b2fe6584ebf2911ff90ef79a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1873421619217615079
 BoxCollider2D:
   m_ObjectHideFlags: 0

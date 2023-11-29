@@ -6,10 +6,16 @@ public class EnemyBulletMovement : MonoBehaviour
     [SerializeField] private float m_speed;
     private FireEnemies m_fireEnemies;
     public m_enum m_enemy;
+    public m_direction m_pattern;
 
     public enum m_enum
     {
         first, second, third, fourth
+    }
+
+    public enum m_direction
+    {
+        normal, aligned, fourAligned
     }
 
     private void Start()
@@ -50,15 +56,71 @@ public class EnemyBulletMovement : MonoBehaviour
         {
             case "North(Clone)":
                 m_rigidBody.velocity = m_fireEnemies.m_origin[0].right * m_speed;
+                switch (m_pattern)
+                {
+                    case m_direction.fourAligned:
+                        float angleFourAligned = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angleFourAligned - 90);
+                        break;
+                    case m_direction.aligned:
+                        float angle = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+                        break;
+                    case m_direction.normal:
+                        break;
+                    default: break;
+                }
                 break;
             case "South(Clone)":
                 m_rigidBody.velocity = m_fireEnemies.m_origin[1].right * m_speed;
+                    switch (m_pattern)
+                    {
+                        case m_direction.fourAligned:
+                            float angleFourAligned = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                            transform.rotation = Quaternion.Euler(0, 0, angleFourAligned - 90);
+                            break;
+                        case m_direction.aligned:
+                            float angle = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+                            break;
+                        case m_direction.normal:
+                            break;
+                        default: break;
+                    }
                 break;
             case "East(Clone)":
                 m_rigidBody.velocity = m_fireEnemies.m_origin[2].right * m_speed;
+                switch (m_pattern)
+                {
+                    case m_direction.fourAligned:
+                        float angleFourAligned = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angleFourAligned - 90);
+                        break;
+                    case m_direction.aligned:
+                        float angle = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angle + 180);
+                        break;
+                    case m_direction.normal:
+                        break;
+                    default: break;
+                }
                 break;
             case "West(Clone)":
                 m_rigidBody.velocity = m_fireEnemies.m_origin[3].right * m_speed;
+                switch(m_pattern)
+                {
+                    case m_direction.fourAligned:
+                        float angleFourAligned = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angleFourAligned - 90);
+                    break;
+                    case m_direction.aligned:
+                        float angle = Mathf.Atan2(m_fireEnemies.m_origin[0].right.y, m_fireEnemies.m_origin[0].right.x) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(0, 0, angle);
+                        break;
+                    case m_direction.normal: 
+                        break;
+                    default: break;
+                }
                 break;
             default: break;
         }

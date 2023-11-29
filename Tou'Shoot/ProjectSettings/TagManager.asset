@@ -13,7 +13,7 @@ TagManager:
   - Map
   - Water
   - UI
-  - 
+  - Glow
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Glow
+    uniqueID: 1038865903
     locked: 0
