@@ -1370,6 +1370,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 330356992562583802, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -322.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 330356992562583802, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -377.35004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155937209937797124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2536488330469388453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1454,10 +1466,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5227607588014525703, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
     - target: {fileID: 7965265634920405453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_Name
       value: Endgame
@@ -1466,10 +1474,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8663145286938988945, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2056,8 +2060,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289696512
-  m_fontColor: {r: 0, g: 0.5764706, b: 0.6862745, a: 1}
+    rgba: 4294956544
+  m_fontColor: {r: 0, g: 0.8399997, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

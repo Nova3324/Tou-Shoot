@@ -64,9 +64,8 @@ public class Score : MonoBehaviour
     private void CalculatingHighScore()
     {
         if (m_highScore <= m_score)
-        {
-            m_highScoreUI.SetText(m_highScore.ToString());
             m_highScore = m_score;
-        }
+
+        m_highScoreUI.SetText(m_highScore.ToString());
     }
 }
