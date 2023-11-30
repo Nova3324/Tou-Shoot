@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 8497486877524848240}
---- !u!114 &8497486877524848240
+  - {fileID: 7590667656444912525}
+--- !u!114 &7590667656444912525
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,13 +32,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 0.5
   intensity:
     m_OverrideState: 1
     m_Value: 5
   scatter:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.7
   clamp:
     m_OverrideState: 0
     m_Value: 65472

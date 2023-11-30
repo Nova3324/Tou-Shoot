@@ -43,6 +43,20 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void DisplayNoFile()
+    {
+        GameObject.Find("NoFiles").GetComponent<Animator>().SetBool("NoFile", true);
+        GameObject.Find("Back").GetComponent<Button>().interactable = false;
+        GameObject.Find("Reset").GetComponent<Button>().interactable = false;
+    }
+
+    public void HideNoFile()
+    {
+        GameObject.Find("NoFiles").GetComponent<Animator>().SetBool("NoFile", false);
+        GameObject.Find("Back").GetComponent<Button>().interactable = true;
+        GameObject.Find("Reset").GetComponent<Button>().interactable = true;
+    }
+
     public void DisplayVerif()
     {
         GameObject.Find("Check").GetComponent<Animator>().SetBool("Check", true);
@@ -57,17 +71,26 @@ public class MenuManager : MonoBehaviour
         GameObject.Find("Reset").GetComponent<Button>().interactable = true;
     }
 
-    public void ResetHighScore()
+    public void Reset()
     {
         if (File.Exists(Application.dataPath + "/HighScoreSave.json"))
         {
-            File.Delete(Application.dataPath + "/HighScoreSave.json");
-            HideVerif();
-            Debug.Log("Highscore réinitialisé");
+            DisplayVerif();
         }
         else
         {
-            Debug.Log("Aucun fichier HighScoreSave.json trouvé pour réinitialiser.");
+            DisplayNoFile();
         }
+    }
+
+    public void ResetHighScore()
+    {
+        File.Delete(Application.dataPath + "/HighScoreSave.json");
+        HideVerif();
+    }
+
+    public void ContinueInNoFile()
+    {
+        HideNoFile();  
     }
 }
