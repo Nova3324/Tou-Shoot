@@ -412,7 +412,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -35, y: -276.44}
-  m_SizeDelta: {x: 374, y: 86.44}
+  m_SizeDelta: {x: 401.13, y: 86.44}
   m_Pivot: {x: 1, y: -0.00000016018748}
 --- !u!114 &213161296
 MonoBehaviour:
@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc7ffd3d1ea80f4cabd45b8b80b420a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enemiesOnTheMap: []
 --- !u!4 &598347561
 Transform:
   m_ObjectHideFlags: 0
@@ -3132,7 +3133,7 @@ MonoBehaviour:
   - {fileID: 359929569}
   - {fileID: 1755678451}
   - {fileID: 372096478}
-  m_enemiesOnTheMap: []
+  m_enemy: {fileID: 0}
   m_WaitForSpawn: 5
 --- !u!1001 &3895073161874852027
 PrefabInstance:

@@ -255,7 +255,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_bulletPrefab: {fileID: 5731956001595851875, guid: 1a544ff27b6a20349a3c139656a49098, type: 3}
-  m_explosionPrefab: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
+  m_explosionPrefab: {fileID: 2708598583397607911, guid: 0727dbe6a3180cd47a5d30f8ea99dc07, type: 3}
   m_station: {fileID: 1503774276}
   m_transition: {fileID: 1064974333}
 --- !u!1 &480880441

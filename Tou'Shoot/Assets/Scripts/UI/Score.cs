@@ -6,7 +6,8 @@ public class Score : MonoBehaviour
 {
     public int m_score;
     public int m_highScore;
-    private int m_constant = 100;
+    private int m_limiteScore = 999999999;
+    private int m_constant = 5;
     public float m_timeSinceStart;
     public int m_remainingEnemies;
 
@@ -42,22 +43,32 @@ public class Score : MonoBehaviour
 
     public void EnemyHit()
     {
-        m_score += 100000;
+        m_score += 5;
+
+        if (m_score >= m_limiteScore)
+            m_score = m_limiteScore;
+
         m_scoreUI.SetText(m_score.ToString());
     }
 
     public void EnemyDeath()
     {
         if(m_remainingEnemies > 0)
-            m_score += (m_score + m_remainingEnemies * m_constant) / Convert.ToInt32(m_timeSinceStart);
+            m_score = (m_score * m_remainingEnemies);
+
+        if (m_score >= m_limiteScore)
+            m_score = m_limiteScore;
 
         m_scoreUI.SetText(m_score.ToString());
     }
 
     public void LastEnemyIsDead()
     {
-        m_constant = 10;
-        m_score += (m_score * m_constant);
+        m_score += 1000;
+
+        if (m_score >= m_limiteScore)
+            m_score = m_limiteScore;
+
         m_scoreUI.SetText(m_score.ToString());
     }
 

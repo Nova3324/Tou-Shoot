@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System.IO;
+using System;
 
 public class ScoreUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text m_highScoreUI;
-    private float m_highScore;
+    private int m_highScore;
     public DataHighScore m_saveGameData = new DataHighScore();
     void Start()
     {
@@ -24,7 +25,7 @@ public class ScoreUI : MonoBehaviour
             m_saveGameData = JsonUtility.FromJson<DataHighScore>(gameData);
 
             m_highScore = m_saveGameData.m_highScore;
-            m_highScoreUI.SetText(m_highScore.ToString());
+            m_highScoreUI.text = m_highScore.ToString();    
             m_highScoreUI.color = Color.yellow;
         }
         else
