@@ -35,7 +35,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         m_timeSinceStart = Time.realtimeSinceStartup;
-        m_remainingEnemies = Enemies.Instance.m_enemiesOnTheMap.Count;
+        m_remainingEnemies = EnemyManager.Instance.m_enemiesOnTheMap.Count;
 
         CalculatingHighScore();
     }

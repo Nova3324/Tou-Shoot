@@ -6,7 +6,9 @@ public class Enemies : MonoBehaviour
 {
     [SerializeField] private List<GameObject> m_enemyList = new List<GameObject>();
     [SerializeField] private List<GameObject> m_spawnPoints = new List<GameObject>();
-    public List<GameObject> m_enemiesOnTheMap = new List<GameObject>();
+
+    public GameObject m_enemy;
+
     
     [SerializeField] private int m_WaitForSpawn;
     private int m_maxEnemies;
@@ -40,8 +42,8 @@ public class Enemies : MonoBehaviour
         {
             if (m_canSpawn)
             {
-                GameObject obj = Instantiate(m_enemyList[m_index], m_spawnPoints[m_index].transform.position, m_spawnPoints[m_index].transform.rotation);
-                m_enemiesOnTheMap.Add(obj);
+                m_enemy = Instantiate(m_enemyList[m_index], m_spawnPoints[m_index].transform.position, m_spawnPoints[m_index].transform.rotation);
+                EnemyManager.Instance.AddEnemyinList();
                 m_index++;
 
                 m_canSpawn = false;

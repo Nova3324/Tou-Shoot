@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
-    [SerializeField] private int m_life = 100;
+    [SerializeField] private int m_life = 10;
+    [SerializeField] private GameObject m_explosionPrefab;
 
     private void Update()
     {
-        Dead();
+        
     }
 
     public void TakeDamage(int damage)
@@ -21,10 +22,17 @@ public class EnemyLife : MonoBehaviour
     {
         if(m_life <= 0)
         {
-            Enemies.Instance.m_enemiesOnTheMap.Remove(transform.parent.parent.gameObject);
+            EnemyManager.Instance.m_enemiesOnTheMap.Remove(transform.parent.parent.gameObject);
             EndGame.Instance.CheckIfTheGameIsFinish();
             Score.Instance.EnemyDeath();
-            transform.parent.parent.gameObject.SetActive(false);
+            EnemyManager.Instance.Explosion(m_explosionPrefab, transform.position, Quaternion.identity);
+            StartCoroutine(DisableEnemy());
         }
+    }
+
+    IEnumerator DisableEnemy()
+    {
+        yield return new WaitForSeconds(0.1f);
+        transform.parent.parent.gameObject.SetActive(false);
     }
 }

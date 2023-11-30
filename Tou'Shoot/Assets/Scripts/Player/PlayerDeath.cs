@@ -8,7 +8,7 @@ public class PlayerDeath : MonoBehaviour
         {
             Debug.Log("Player Death");
             SaveData.Instance.SaveToJSON();
-            EndGame.Instance.DisplayTheRightMenu();
+            //EndGame.Instance.DisplayTheRightMenu();
         }
     }
 }

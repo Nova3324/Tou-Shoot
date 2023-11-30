@@ -10,7 +10,7 @@ public class EndGame : MonoBehaviour
     [SerializeField] private GameObject m_win;
     [SerializeField] private GameObject m_lose;
 
-    [SerializeField] private TMP_Text m_loseScoreUI, m_winScoreUI;
+    [SerializeField] private TMP_Text m_loseScoreUI;
     private void Awake()
     {
         if(Instance == null)
@@ -25,7 +25,7 @@ public class EndGame : MonoBehaviour
 
     public void CheckIfTheGameIsFinish() 
     { 
-        if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
+        if(EnemyManager.Instance.m_enemiesOnTheMap.Count == 0)
         {
             DisplayTheRightMenu();
             Score.Instance.LastEnemyIsDead();
@@ -35,12 +35,9 @@ public class EndGame : MonoBehaviour
 
     public void DisplayTheRightMenu()
     {
-        if(Enemies.Instance.m_enemiesOnTheMap.Count == 0)
+        if(EnemyManager.Instance.m_enemiesOnTheMap.Count == 0)
         {
-            m_win.SetActive(true);
-            m_winScoreUI.SetText(Score.Instance.m_score.ToString());
-            Time.timeScale = 0;
-            GameObject.Find("Player").gameObject.SetActive(false);
+            StartCoroutine(EnableWinMenu());
         }
         else
         {
@@ -49,5 +46,13 @@ public class EndGame : MonoBehaviour
             Time.timeScale = 0;
             GameObject.Find("Player").gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator EnableWinMenu()
+    {
+        yield return new WaitForSeconds(0.7f);
+        m_win.SetActive(true);
+        Time.timeScale = 0;
+        GameObject.Find("Player").gameObject.SetActive(false);
     }
 }

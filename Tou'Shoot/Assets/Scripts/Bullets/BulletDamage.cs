@@ -18,6 +18,7 @@ public class BulletDamage : MonoBehaviour
             m_enemyLife.TakeDamage(m_damage);
             Score.Instance.EnemyHit();
             collision.gameObject.SetActive(false);
+            m_enemyLife.Dead();
         }
     }
 }
