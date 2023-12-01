@@ -57,23 +57,43 @@ public class MenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         switch (gameObject.name)
         {
             case "Resume":
+                m_resume.color = Color.white;
                 m_pause.SetActive(false);
                 Time.timeScale = 1f;
                 m_playerInputs.SwitchCurrentActionMap("Game");
+
+                //Audio
+                GameAudioManager.Instance.Button();
+
                 break;
             case "Retry":
+                m_retry.color = Color.white;
                 SceneManager.LoadSceneAsync("Game");
                 SaveData.Instance.LoadFromJSON();
                 if (Time.timeScale != 1)
                     Time.timeScale = 1.0f;
+
+                //Audio
+                GameAudioManager.Instance.Button();
+
                 break;
             case "Settings":
+                m_settings.color = Color.white;
                 m_settingsMenu.SetActive(true);
+                
+                //Audio
+                GameAudioManager.Instance.Button();
+
                 break;
             case "Quit":
+                m_quit.color = Color.white;
                 Time.timeScale = 1.0f;
                 SceneManager.LoadScene("MainMenu");
                 SaveData.Instance.LoadFromJSON();
+
+                //Audio
+                GameAudioManager.Instance.Button();
+
                 break;
             default:
                 break;

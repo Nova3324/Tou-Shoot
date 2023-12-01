@@ -35,8 +35,14 @@ public class SettingsNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
         switch (gameObject.name)
         {
             case "Back":
+                m_back.color = Color.white;
+
                 m_pause.SetActive(true);
                 m_settings.SetActive(false);
+
+                //Audio
+                GameAudioManager.Instance.Button();
+
                 break;
             default:
                 break;

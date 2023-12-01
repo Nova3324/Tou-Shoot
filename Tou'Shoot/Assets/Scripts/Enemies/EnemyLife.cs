@@ -27,6 +27,9 @@ public class EnemyLife : MonoBehaviour
             Score.Instance.EnemyDeath();
             EnemyManager.Instance.Explosion(m_explosionPrefab, transform.position, Quaternion.identity);
             StartCoroutine(DisableEnemy());
+
+            //Audio
+            GameAudioManager.Instance.Explosion();
         }
     }
 

@@ -21,7 +21,7 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0;  i < m_objectToEnable.Count; i++)
+        for (int i = 0; i < m_objectToEnable.Count; i++)
             m_objectToEnable[i].SetActive(false);
     }
     
@@ -41,13 +41,13 @@ public class StartGame : MonoBehaviour
             m_timerUI.color = new Color32(255, 155, 0, 255);
             m_animator.SetInteger("Timer", 2);
         }
-        if (m_timer >= 2)
+        if (m_timer >= 1.9)
         {
             m_timerUI.SetText("1");
             m_timerUI.color = new Color32(255,0, 0,255);
             m_animator.SetInteger("Timer", 1);
         }
-        if (m_timer >= 3)
+        if (m_timer >= 2.8)
         {   
             m_detectingCollision = true;
             for (int i = 0; i < m_objectToEnable.Count; i++)
