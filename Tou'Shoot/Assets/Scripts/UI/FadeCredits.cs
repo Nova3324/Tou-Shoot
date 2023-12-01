@@ -7,6 +7,21 @@ public class FadeCredits : MonoBehaviour
     [SerializeField] private List<CanvasGroup> m_objectsToFade = new List<CanvasGroup>();
     [SerializeField] private float m_FadeInDuration, m_fadeOutDuration, m_AttendanceTime, m_WaitBeforeStart;
 
+    public static FadeCredits Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Debug.Log("There is two FadeCredits");
+            Destroy(this);
+            return;
+        }
+
+    }
+
     private void Start()
     {
         StartCoroutine(StartFadeSequence());
@@ -53,5 +68,18 @@ public class FadeCredits : MonoBehaviour
                 canvasGroup.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void ResetCredits()
+    {
+        StopAllCoroutines();
+
+        foreach (CanvasGroup canvasGroup in m_objectsToFade)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.gameObject.SetActive(true);
+        }
+
+        StartCoroutine(StartFadeSequence());
     }
 }

@@ -26,7 +26,6 @@ public class EnemyLife : MonoBehaviour
             EndGame.Instance.CheckIfTheGameIsFinish();
             Score.Instance.EnemyDeath();
             EnemyManager.Instance.Explosion(m_explosionPrefab, transform.position, Quaternion.identity);
-            AudioManager.Instance.PlaySoundExplosion();
             StartCoroutine(DisableEnemy());
         }
     }

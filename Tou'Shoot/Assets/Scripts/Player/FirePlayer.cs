@@ -35,7 +35,6 @@ public class FirePlayer : MonoBehaviour
         {
             m_nextFire = Time.time + m_fireRate;
             m_bulletPooler.SpawnFromPool("Player Bullet", m_origin.position, Quaternion.identity);
-            AudioManager.Instance.PlaySoundLaser();
         }
     }
 }

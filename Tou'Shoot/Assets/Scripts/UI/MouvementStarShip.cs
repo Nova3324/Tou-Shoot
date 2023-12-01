@@ -28,6 +28,8 @@ public class MouvementStarShip : MonoBehaviour
     {
         m_startPosition = transform.position;
         m_destination = new Vector3(4, transform.position.y, transform.position.z);
+
+        Intro_AudioManager.Instance.StarShipMouvement();
     }
     void Update()
     {
@@ -45,8 +47,10 @@ public class MouvementStarShip : MonoBehaviour
         if (time >= 1 && !m_hasShot)
         {
             m_bullet = Instantiate(m_bulletPrefab, transform.position, Quaternion.Euler(0f, 0f, 90f));
-            AudioManager.Instance.PlaySoundLaser();
             m_hasShot = true;
+
+            //Audio
+            Intro_AudioManager.Instance.Laser();
         }
 
     }
@@ -57,14 +61,16 @@ public class MouvementStarShip : MonoBehaviour
         {
             m_bullet.transform.position += Vector3.left * 0.05f;
             
-            if(m_bullet.transform.position.x <= 1.032f && !m_hasExplose)
+            if (m_bullet.transform.position.x <= 1.032f && !m_hasExplose)
             {
                 Instantiate(m_explosionPrefab);
-                AudioManager.Instance.PlaySoundExplosion();
                 m_station.SetActive(false);
                 m_transition.SetActive(true);
                 m_hasExplose = true;
                 m_bullet.SetActive(false);
+
+                //Audio
+                Intro_AudioManager.Instance.Explosion();
             }
         }
     }

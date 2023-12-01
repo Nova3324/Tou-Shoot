@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] Animator m_animator;
+    [SerializeField] AudioSettings m_audioSettings;
     
     [SerializeField] private List<GameObject> m_objectToEnable = new List<GameObject>();
     private float m_timer;
@@ -21,9 +23,6 @@ public class StartGame : MonoBehaviour
     {
         for (int i = 0;  i < m_objectToEnable.Count; i++)
             m_objectToEnable[i].SetActive(false);
-
-        AudioManager.Instance.PlaySoundCountDown();
-        AudioManager.Instance.InitFirstMusic();
     }
     
     void Update()

@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public DataHighScore m_saveGameData = new DataHighScore();
     [SerializeField] private GameObject m_credits, m_settings, m_mainmenu;
+    [SerializeField] private AudioSettings m_audioSettings;
 
     public void Retry()
     {
@@ -26,7 +27,7 @@ public class MenuManager : MonoBehaviour
 
     public void MainMenu()
     {
-        if(m_settings.activeSelf == true)
+        if (m_settings.activeSelf == true)
         {
             m_settings.SetActive(false);
             m_mainmenu.SetActive(true);
@@ -48,6 +49,7 @@ public class MenuManager : MonoBehaviour
     {
         m_credits.SetActive(true);
         m_mainmenu.SetActive(false);
+        FadeCredits.Instance.ResetCredits();
     }
 
     public void Quit()
