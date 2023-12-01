@@ -71,7 +71,9 @@ public class MenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 m_settingsMenu.SetActive(true);
                 break;
             case "Quit":
-                SceneManager.LoadSceneAsync("MainMenu");
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene("MainMenu");
+                SaveData.Instance.LoadFromJSON();
                 break;
             default:
                 break;
