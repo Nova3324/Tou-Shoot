@@ -65,14 +65,26 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
             case "Play":
                 m_playText.color = Color.white;
                 Play();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
                 break;
+
             case "Settings":
                 m_settingsText.color = Color.white;
                 Settings();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
                 break;
+
             case "Credits":
                 m_creditsText.color = Color.white;
                 Credits();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
+
                 break;
             case "Quit":
                 Quit();

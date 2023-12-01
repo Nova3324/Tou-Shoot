@@ -656,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656040022}
-  - component: {fileID: 656040023}
+  - component: {fileID: 656040024}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -682,7 +682,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &656040023
+--- !u!114 &656040024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 656040021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfcff1418f55b7747af9a21b597588eb, type: 3}
+  m_Script: {fileID: 11500000, guid: e7ef2f0bb413fcc499c8000ce5d78770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_sounds:

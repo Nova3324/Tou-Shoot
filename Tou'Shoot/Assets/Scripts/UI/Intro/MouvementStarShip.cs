@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class MouvementStarShip : MonoBehaviour
@@ -29,7 +26,7 @@ public class MouvementStarShip : MonoBehaviour
         m_startPosition = transform.position;
         m_destination = new Vector3(4, transform.position.y, transform.position.z);
 
-        Intro_AudioManager.Instance.StarShipMouvement();
+        IntroAudioManager.Instance.StarShipMouvement();
     }
     void Update()
     {
@@ -50,7 +47,7 @@ public class MouvementStarShip : MonoBehaviour
             m_hasShot = true;
 
             //Audio
-            Intro_AudioManager.Instance.Laser();
+            IntroAudioManager.Instance.Laser();
         }
 
     }
@@ -70,7 +67,7 @@ public class MouvementStarShip : MonoBehaviour
                 m_bullet.SetActive(false);
 
                 //Audio
-                Intro_AudioManager.Instance.Explosion();
+                IntroAudioManager.Instance.Explosion();
             }
         }
     }

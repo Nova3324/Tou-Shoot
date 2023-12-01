@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Intro_AudioManager : MonoBehaviour
+public class IntroAudioManager : MonoBehaviour
 {
     [SerializeField] List<AudioSource> m_sounds = new List<AudioSource>();
 
-    public static Intro_AudioManager Instance;
+    public static IntroAudioManager Instance;
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
         else
         {

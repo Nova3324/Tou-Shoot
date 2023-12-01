@@ -24,6 +24,9 @@ public class NavigationCredits : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         Back();
         m_back.color = Color.white;
+
+        //Audio
+        MainMenuAudioManager.Instance.Button();
     }
 
     /*---------------------------------------------------------------------------METHODS----------------------------------------------------------------------------*/

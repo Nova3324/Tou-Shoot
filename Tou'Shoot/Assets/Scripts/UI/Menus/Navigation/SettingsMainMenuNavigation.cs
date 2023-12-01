@@ -85,30 +85,51 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
                 {
                     m_back.color = Color.white;
                     Back();
+
+                    //Audio
+                    MainMenuAudioManager.Instance.Button();
                 }
+
                 break;
+
             case "Reset":
                 if (m_backSprite.sprite != m_disableButtons)
                 {
                     m_reset.color = Color.white;
                     CheckReset();
                     DisbaleButton();
+
+                    //Audio
+                    MainMenuAudioManager.Instance.Button();
                 }
+
                 break;
             case "Continue":
                 EnableButton();
                 m_continue.color = Color.white;
                 ContinueInNoFile();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
+
                 break;
             case "Yes":
                 EnableButton();
                 m_yes.color = Color.white;
                 ResetHighScore();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
+
                 break;
             case "No":
                 EnableButton();
                 m_no.color = Color.white;
                 HideVerif();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
+
                 break;
             default:
                 break;
@@ -179,5 +200,4 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
         m_backSprite.sprite = m_enableButton;
         m_resetSprite.sprite = m_enableButton;
     }
-
 }
