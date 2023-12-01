@@ -7,7 +7,6 @@ public class Score : MonoBehaviour
     public int m_score;
     public int m_highScore;
     private int m_limiteScore = 999999999;
-    private int m_constant = 5;
     public float m_timeSinceStart;
     public int m_remainingEnemies;
 

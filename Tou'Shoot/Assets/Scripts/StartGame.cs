@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
@@ -16,8 +19,11 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0;  i < m_objectToEnable.Count; i++)
+        for (int i = 0;  i < m_objectToEnable.Count; i++)
             m_objectToEnable[i].SetActive(false);
+
+        AudioManager.Instance.PlaySoundCountDown();
+        AudioManager.Instance.InitFirstMusic();
     }
     
     void Update()
@@ -43,7 +49,7 @@ public class StartGame : MonoBehaviour
             m_animator.SetInteger("Timer", 1);
         }
         if (m_timer >= 3)
-        {
+        {   
             m_detectingCollision = true;
             for (int i = 0; i < m_objectToEnable.Count; i++)
             {

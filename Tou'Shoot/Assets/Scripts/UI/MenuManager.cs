@@ -2,10 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class MenuManager : MonoBehaviour
 {
     public DataHighScore m_saveGameData = new DataHighScore();
+    [SerializeField] private GameObject m_credits, m_settings, m_mainmenu;
+
     public void Retry()
     {
         SceneManager.LoadSceneAsync("Game");
@@ -16,26 +19,35 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadSceneAsync("Game");
+        SceneManager.LoadScene("Game");
         if (Time.timeScale != 1)
             Time.timeScale = 1.0f;
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-        if (Time.timeScale != 1)
-            Time.timeScale = 1.0f;
+        if(m_settings.activeSelf == true)
+        {
+            m_settings.SetActive(false);
+            m_mainmenu.SetActive(true);
+        }
+        else if(m_credits.activeSelf == true)
+        {
+            m_credits.SetActive(false);
+            m_mainmenu.SetActive(true);
+        }
     }
 
     public void Settings()
     {
-        SceneManager.LoadSceneAsync("Settings");
+        m_settings.SetActive(true);
+        m_mainmenu.SetActive(false);
     }
 
     public void Credits()
     {
-        SceneManager.LoadSceneAsync("Credits");
+        m_credits.SetActive(true);
+        m_mainmenu.SetActive(false);
     }
 
     public void Quit()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MouvementStarShip : MonoBehaviour
@@ -44,6 +45,7 @@ public class MouvementStarShip : MonoBehaviour
         if (time >= 1 && !m_hasShot)
         {
             m_bullet = Instantiate(m_bulletPrefab, transform.position, Quaternion.Euler(0f, 0f, 90f));
+            AudioManager.Instance.PlaySoundLaser();
             m_hasShot = true;
         }
 
@@ -58,6 +60,7 @@ public class MouvementStarShip : MonoBehaviour
             if(m_bullet.transform.position.x <= 1.032f && !m_hasExplose)
             {
                 Instantiate(m_explosionPrefab);
+                AudioManager.Instance.PlaySoundExplosion();
                 m_station.SetActive(false);
                 m_transition.SetActive(true);
                 m_hasExplose = true;
