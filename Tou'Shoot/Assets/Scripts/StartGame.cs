@@ -23,6 +23,8 @@ public class StartGame : MonoBehaviour
     {
         for (int i = 0; i < m_objectToEnable.Count; i++)
             m_objectToEnable[i].SetActive(false);
+
+        GameAudioManager.Instance.Countdown();
     }
     
     void Update()

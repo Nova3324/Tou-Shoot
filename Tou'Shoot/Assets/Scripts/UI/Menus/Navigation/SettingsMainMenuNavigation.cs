@@ -15,6 +15,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
     [SerializeField] private TMP_Text m_yes;
     [SerializeField] private TMP_Text m_no;
     [SerializeField] private TMP_Text m_continue;
+    [SerializeField] private TMP_Text m_apply;
 
     [Header("Sprites")]
     [SerializeField] private Sprite m_disableButtons;
@@ -24,6 +25,23 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
     [SerializeField] private Image m_backSprite;
     [SerializeField] private Image m_resetSprite;
 
+    [Header("Sliders")]
+    [SerializeField] private Slider m_musicsSlider;
+    [SerializeField] private Slider m_soundsSlider;
+
+    private float m_currentMusicSliderValue;
+    private float m_currentSoundsSliderValue;
+
+    private void Start()
+    {
+        m_currentMusicSliderValue = m_musicsSlider.value;
+        m_currentSoundsSliderValue = m_musicsSlider.value;
+    }
+
+    private void Update()
+    {
+        ApplyButton();
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         switch (gameObject.name)
@@ -44,6 +62,9 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
                 break;
             case "No":
                 m_no.color = Color.red;
+                break;
+            case "Apply":
+                m_apply.color = Color.green;
                 break;
             default:
                 break;
@@ -71,6 +92,9 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
             case "No":
                 m_no.color = Color.white;
                 break;
+            case "Apply":
+                m_apply.color = Color.white;
+                break;
             default:
                 break;
         }
@@ -97,7 +121,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
                 {
                     m_reset.color = Color.white;
                     CheckReset();
-                    DisbaleButton();
+                    DisableButton();
 
                     //Audio
                     MainMenuAudioManager.Instance.Button();
@@ -126,6 +150,15 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
                 EnableButton();
                 m_no.color = Color.white;
                 HideVerif();
+
+                //Audio
+                MainMenuAudioManager.Instance.Button();
+
+                break;
+            case "Apply":
+                m_apply.color = Color.white;
+                SaveAudioSettings.Instance.SaveToJSON();
+                EnableButton();
 
                 //Audio
                 MainMenuAudioManager.Instance.Button();
@@ -187,17 +220,25 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
         HideNoFile();
     }
 
-    public void DisbaleButton()
+    public void DisableButton()
     {
-
         m_backSprite.sprite = m_disableButtons;
         m_resetSprite.sprite = m_disableButtons;
-
     }
 
     public void EnableButton()
     {
         m_backSprite.sprite = m_enableButton;
         m_resetSprite.sprite = m_enableButton;
+    }
+
+    private void ApplyButton()
+    {
+        if (m_musicsSlider.value != m_currentMusicSliderValue || m_soundsSlider.value != m_currentSoundsSliderValue)
+        {
+            m_currentMusicSliderValue = m_musicsSlider.value;
+            m_currentSoundsSliderValue = m_soundsSlider.value;
+            DisableButton();
+        }
     }
 }

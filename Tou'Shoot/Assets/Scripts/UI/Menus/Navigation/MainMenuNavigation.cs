@@ -16,6 +16,15 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField] TMP_Text m_creditsText;
     [SerializeField] TMP_Text m_quitText;
 
+    [Header("Animator")]
+    [SerializeField] private Animator m_transitionAnimator;
+    [SerializeField] private Animator m_buttonsAnimator;
+
+
+    private void Start()
+    {
+        m_buttonsAnimator.SetBool("MainMenuButtons", true);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         switch (gameObject.name)
@@ -64,7 +73,9 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
         {
             case "Play":
                 m_playText.color = Color.white;
-                Play();
+                m_transitionAnimator.SetBool("Transition", true);
+
+                Invoke("Play", 0.8f);
 
                 //Audio
                 MainMenuAudioManager.Instance.Button();
