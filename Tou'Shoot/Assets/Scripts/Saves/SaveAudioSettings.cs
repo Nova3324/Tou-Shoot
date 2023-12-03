@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
 public class SaveAudioSettings : MonoBehaviour
 {
     public DataAudioSettings m_DataAudioSettings = new DataAudioSettings();
+
+    [SerializeField] private GameObject m_settings;
+    
     public static SaveAudioSettings Instance;
     private void Awake()
     {
@@ -22,7 +23,10 @@ public class SaveAudioSettings : MonoBehaviour
     private void Start()
     {
         if (File.Exists(Application.dataPath + "/AudioSettings.json"))
+        {
             LoadFromJSON();
+            Invoke("HideSettings", 0.3f);
+        }
         else
             return;
     }
@@ -45,7 +49,6 @@ public class SaveAudioSettings : MonoBehaviour
         AudioSettings.Instance.m_musicsSlider.value = m_DataAudioSettings.musicsSlider;
         AudioSettings.Instance.m_soundsSlider.value = m_DataAudioSettings.sounddsSlider;
         Debug.Log("Paramètres audio chargés");
-
     }
 
     public void ResetMusicsSettings()
@@ -68,5 +71,10 @@ public class SaveAudioSettings : MonoBehaviour
         m_DataAudioSettings.sounddsSlider = 0.5f;
         AudioSettings.Instance.m_soundsSlider.value = m_DataAudioSettings.sounddsSlider;
         Debug.Log("Reset Sounds");
+    }
+    
+    private void HideSettings()
+    {
+        m_settings.SetActive(false);
     }
 }

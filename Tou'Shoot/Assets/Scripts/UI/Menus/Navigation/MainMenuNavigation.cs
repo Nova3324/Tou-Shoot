@@ -23,7 +23,7 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     private void Start()
     {
-        m_buttonsAnimator.SetBool("MainMenuButtons", true);
+        Invoke("ButtonsAnimation", 1f);     
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -131,5 +131,10 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void Quit()
     {
         Application.Quit();
+    }
+
+    private void ButtonsAnimation()
+    {
+        m_buttonsAnimator.SetBool("MainMenuButtons", true);
     }
 }

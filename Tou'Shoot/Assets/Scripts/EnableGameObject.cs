@@ -10,8 +10,8 @@ public class EnableGameObject : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         
-        Invoke("TransitionAnimation", 4f);
-        Invoke("EnableGameObjects", 5f);
+        Invoke("TransitionAnimation", 2f);
+        Invoke("EnableGameObjects", 3f);
     }
 
     private void EnableGameObjects()

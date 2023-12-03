@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class InputsController : MonoBehaviour
 {
     private PlayerInput m_playerInput;
     [SerializeField] private PlayerController m_playerController;
-    [SerializeField] private GameObject m_pause, m_settings;
+
+    [Header("GameObjects")]
+    [SerializeField] private GameObject m_pause;
+    [SerializeField] private GameObject m_settings;
+
     void Start()
     {
         m_playerInput = GetComponent<PlayerInput>();
@@ -32,31 +37,6 @@ public class InputsController : MonoBehaviour
             m_pause.SetActive(true);
             Time.timeScale = 0f;
             m_playerInput.SwitchCurrentActionMap("Menu");
-        }
-    }
-
-    public void HidePauseMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if(m_pause.activeSelf == true)
-            {
-                m_pause.SetActive(false);
-                Time.timeScale = 1f;
-                m_playerInput.SwitchCurrentActionMap("Game");
-            }
-        }
-    }
-
-    public void HideSettingsMenu(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            if(m_settings.activeSelf == true)
-            {
-                m_settings.SetActive(false);
-                m_pause.SetActive(true);
-            }
         }
     }
 }

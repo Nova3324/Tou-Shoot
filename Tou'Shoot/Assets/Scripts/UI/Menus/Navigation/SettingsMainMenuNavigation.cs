@@ -35,7 +35,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
     private void Start()
     {
         m_currentMusicSliderValue = m_musicsSlider.value;
-        m_currentSoundsSliderValue = m_musicsSlider.value;
+        m_currentSoundsSliderValue = m_soundsSlider.value;
     }
 
     private void Update()

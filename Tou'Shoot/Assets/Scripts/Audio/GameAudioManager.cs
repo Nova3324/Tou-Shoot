@@ -25,12 +25,13 @@ public class GameAudioManager : MonoBehaviour
 
     private void Start()
     {
-        InitFirstMusic();
+
     }
 
     private void Update()
     {
-        Music();
+        if (m_currentMusic != null)
+            Music();
     }
 
     /*---------------------------------------------------------------------------SOUNDS----------------------------------------------------------------------------*/
@@ -64,17 +65,15 @@ public class GameAudioManager : MonoBehaviour
             int index = Random.Range(0, m_musics.Count);
 
             m_currentMusic = m_musics[index];
-            StartCoroutine(StartFade(m_currentMusic, 3f, 0.5f));
             m_currentMusic.Play();
         }
     }
 
-    private void InitFirstMusic()
+    public void InitFirstMusic()
     {
         int index = Random.Range(0, m_musics.Count);
 
         m_currentMusic = m_musics[index];
-        StartCoroutine(StartFade(m_currentMusic, 5f, 0.5f));
         m_currentMusic.Play();
     }
 

@@ -9,7 +9,6 @@ public class MenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] TMP_Text m_resume, m_retry, m_settings, m_quit;
     [SerializeField] GameObject m_pause, m_settingsMenu;
     [SerializeField] private PlayerInput m_playerInputs;
-    [SerializeField] private AudioSettings m_audioSettings;
     public void OnPointerEnter(PointerEventData eventData)
     {
         switch (gameObject.name)
@@ -80,6 +79,7 @@ public class MenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             case "Settings":
                 m_settings.color = Color.white;
                 m_settingsMenu.SetActive(true);
+                m_pause.SetActive(false);
                 
                 //Audio
                 GameAudioManager.Instance.Button();

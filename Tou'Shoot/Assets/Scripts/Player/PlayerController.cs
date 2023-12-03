@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovements), typeof(FirePlayer), typeof(PlayerLife))]
+[RequireComponent(typeof(PlayerMovements), typeof(FirePlayer))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovements m_playerMovements;
