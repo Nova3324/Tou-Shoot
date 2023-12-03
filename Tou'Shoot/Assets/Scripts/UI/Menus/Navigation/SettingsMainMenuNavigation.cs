@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.IO;
+using System.Collections;
 
 public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -35,7 +36,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
     private void Start()
     {
         m_currentMusicSliderValue = m_musicsSlider.value;
-        m_currentSoundsSliderValue = m_soundsSlider.value;
+        m_currentSoundsSliderValue = m_soundsSlider .value;
     }
 
     private void Update()
@@ -129,7 +130,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
 
                 break;
             case "Continue":
-                EnableButton();
+                StartCoroutine(EnableButtons());
                 m_continue.color = Color.white;
                 ContinueInNoFile();
 
@@ -138,7 +139,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
 
                 break;
             case "Yes":
-                EnableButton();
+                StartCoroutine(EnableButtons());
                 m_yes.color = Color.white;
                 ResetHighScore();
 
@@ -147,7 +148,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
 
                 break;
             case "No":
-                EnableButton();
+                StartCoroutine(EnableButtons());
                 m_no.color = Color.white;
                 HideVerif();
 
@@ -158,7 +159,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
             case "Apply":
                 m_apply.color = Color.white;
                 SaveAudioSettings.Instance.SaveToJSON();
-                EnableButton();
+                StartCoroutine(EnableButtons());
 
                 //Audio
                 MainMenuAudioManager.Instance.Button();
@@ -195,6 +196,7 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
     public void HideVerif()
     {
         GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 2);
+        StartCoroutine(SetBoolToZero());
     }
 
     public void CheckReset()
@@ -226,12 +228,6 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
         m_resetSprite.sprite = m_disableButtons;
     }
 
-    public void EnableButton()
-    {
-        m_backSprite.sprite = m_enableButton;
-        m_resetSprite.sprite = m_enableButton;
-    }
-
     private void ApplyButton()
     {
         if (m_musicsSlider.value != m_currentMusicSliderValue || m_soundsSlider.value != m_currentSoundsSliderValue)
@@ -240,5 +236,18 @@ public class SettingsMainMenuNavigation : MonoBehaviour, IPointerEnterHandler, I
             m_currentSoundsSliderValue = m_soundsSlider.value;
             DisableButton();
         }
+    }
+
+    public IEnumerator SetBoolToZero()
+    {
+        yield return new WaitForSeconds(0.6f);
+        GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 0);
+    }
+
+    public IEnumerator EnableButtons()
+    {
+        yield return new WaitForSeconds(0.5f);
+        m_backSprite.sprite = m_enableButton;
+        m_resetSprite.sprite = m_enableButton;
     }
 }

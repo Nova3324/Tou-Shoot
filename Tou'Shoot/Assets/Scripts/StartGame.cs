@@ -17,6 +17,7 @@ public class StartGame : MonoBehaviour
     [SerializeField] private TMP_Text m_timerUI;
 
     [SerializeField] private GameObject m_player;
+    [SerializeField] private GameObject m_timerinUI;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class StartGame : MonoBehaviour
             {
                 GameObject.Find("Timer").gameObject.SetActive(false);
             }
+            m_timerinUI.SetActive(true);
         }
     }  
     

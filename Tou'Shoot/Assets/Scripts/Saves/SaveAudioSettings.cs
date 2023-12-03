@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Collections;
 
 public class SaveAudioSettings : MonoBehaviour
 {
@@ -25,10 +26,13 @@ public class SaveAudioSettings : MonoBehaviour
         if (File.Exists(Application.dataPath + "/AudioSettings.json"))
         {
             LoadFromJSON();
-            Invoke("HideSettings", 0.3f);
+            StartCoroutine(HideSettings()); 
         }
         else
-            return;
+        {
+            SaveToJSON();
+            StartCoroutine(HideSettings());
+        }
     }
 
     public void SaveToJSON()
@@ -72,9 +76,13 @@ public class SaveAudioSettings : MonoBehaviour
         AudioSettings.Instance.m_soundsSlider.value = m_DataAudioSettings.sounddsSlider;
         Debug.Log("Reset Sounds");
     }
-    
-    private void HideSettings()
+   
+
+    public IEnumerator HideSettings()
     {
+        yield return new WaitForSeconds(0.3f); 
         m_settings.SetActive(false);
+        Debug.Log("test");
     }
+
 }
