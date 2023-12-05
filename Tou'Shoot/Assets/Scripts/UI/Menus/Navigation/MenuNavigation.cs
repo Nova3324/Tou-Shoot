@@ -67,7 +67,7 @@ public class MenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 break;
             case "Retry":
                 m_retry.color = Color.white;
-                SceneManager.LoadSceneAsync("Game");
+                SceneManager.LoadSceneAsync("Fast");
                 SaveData.Instance.LoadFromJSON();
                 if (Time.timeScale != 1)
                     Time.timeScale = 1.0f;

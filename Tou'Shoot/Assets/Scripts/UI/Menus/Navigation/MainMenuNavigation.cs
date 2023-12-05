@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -11,7 +12,7 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField] private GameObject m_mainmenu;
 
     [Header("Text Button")]
-    [SerializeField] TMP_Text m_playText;
+    [SerializeField] TMP_Text m_modeText;
     [SerializeField] TMP_Text m_settingsText;
     [SerializeField] TMP_Text m_creditsText;
     [SerializeField] TMP_Text m_quitText;
@@ -19,18 +20,19 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     [Header("Animator")]
     [SerializeField] private Animator m_transitionAnimator;
     [SerializeField] private Animator m_buttonsAnimator;
+    [SerializeField] private Animator m_gamemodeAnimator;
 
 
     private void Start()
     {
-        Invoke("ButtonsAnimation", 1f);     
+        Invoke("ButtonsAnimation", 1f);
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         switch (gameObject.name)
         {
-            case "Play":
-                m_playText.color = new Color32(255, 0, 229, 255);
+            case "Mode":
+                m_modeText.color = new Color32(255, 0, 229, 255);
                 break;
             case "Settings":
                 m_settingsText.color = new Color32(255, 0, 229, 255);
@@ -50,8 +52,8 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         switch (gameObject.name)
         {
-            case "Play":
-                m_playText.color = Color.white;
+            case "Mode":
+                m_modeText.color = Color.white;
                 break;
             case "Settings":
                 m_settingsText.color = Color.white;
@@ -71,11 +73,9 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         switch (gameObject.name)
         {
-            case "Play":
-                m_playText.color = Color.white;
-                m_transitionAnimator.SetBool("Transition", true);
-
-                Invoke("Play", 0.8f);
+            case "Mode":
+                m_modeText.color = Color.white;
+                SwitchMenu();
 
                 //Audio
                 MainMenuAudioManager.Instance.Button();
@@ -107,13 +107,6 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     /*---------------------------------------------------------------------------METHODS----------------------------------------------------------------------------*/
 
-    public void Play()
-    {
-        SceneManager.LoadScene("Game");
-        if (Time.timeScale != 1)
-            Time.timeScale = 1.0f;
-    }
-
     public void Settings()
     {
         m_settings.SetActive(true);
@@ -136,5 +129,15 @@ public class MainMenuNavigation : MonoBehaviour, IPointerEnterHandler, IPointerE
     private void ButtonsAnimation()
     {
         m_buttonsAnimator.SetBool("MainMenuButtons", true);
+    }
+
+    private void SwitchMenu()
+    {
+        m_gamemodeAnimator.SetBool("MainMenu", true);
+        m_gamemodeAnimator.SetBool("GameMode", false);
+        
+        m_buttonsAnimator.SetBool("GameMode", true);
+        m_buttonsAnimator.SetBool("MainMenu", false);
+        m_buttonsAnimator.SetBool("MainMenuButtons", false);
     }
 }
