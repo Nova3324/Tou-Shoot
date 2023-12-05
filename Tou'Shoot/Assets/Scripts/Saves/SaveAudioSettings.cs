@@ -6,8 +6,11 @@ public class SaveAudioSettings : MonoBehaviour
 {
     public DataAudioSettings m_DataAudioSettings = new DataAudioSettings();
 
+    private string saveFolderPath = Application.dataPath + "/Saves";
+
+
     [SerializeField] private GameObject m_settings;
-    
+
     public static SaveAudioSettings Instance;
     private void Awake()
     {
@@ -23,7 +26,14 @@ public class SaveAudioSettings : MonoBehaviour
 
     private void Start()
     {
-        if (File.Exists(Application.dataPath + "/AudioSettings.json"))
+        if (!Directory.Exists(saveFolderPath))
+        {
+            Directory.CreateDirectory(saveFolderPath);
+        }
+
+        Debug.Log(saveFolderPath);
+
+        if (File.Exists(Application.dataPath + "/Saves/AudioSettings.json"))
         {
             LoadFromJSON();
             StartCoroutine(HideSettings()); 
@@ -41,12 +51,12 @@ public class SaveAudioSettings : MonoBehaviour
         m_DataAudioSettings.sounddsSlider = AudioSettings.Instance.m_soundsSlider.value;
 
         string gameData = JsonUtility.ToJson(m_DataAudioSettings);
-        File.WriteAllText(Application.dataPath + "/AudioSettings.json", gameData);
+        File.WriteAllText(Application.dataPath + "/Saves/AudioSettings.json", gameData);
         Debug.Log("Paramètres audio sauvegardés");
     }
     public void LoadFromJSON()
     {
-        string filePath = Application.dataPath + "/AudioSettings.json";
+        string filePath = Application.dataPath + "/Saves/AudioSettings.json";
         string gameData = File.ReadAllText(filePath);
 
         m_DataAudioSettings = JsonUtility.FromJson<DataAudioSettings>(gameData);
@@ -57,7 +67,7 @@ public class SaveAudioSettings : MonoBehaviour
 
     public void ResetMusicsSettings()
     {
-        string filePath = Application.dataPath + "/AudioSettings.json";
+        string filePath = Application.dataPath + "/Saves/AudioSettings.json";
         string gameData = File.ReadAllText(filePath);
 
         m_DataAudioSettings = JsonUtility.FromJson<DataAudioSettings>(gameData);
@@ -68,7 +78,7 @@ public class SaveAudioSettings : MonoBehaviour
 
     public void ResetSoundsSettings()
     {
-        string filePath = Application.dataPath + "/AudioSettings.json";
+        string filePath = Application.dataPath + "/Saves/AudioSettings.json";
         string gameData = File.ReadAllText(filePath);
 
         m_DataAudioSettings = JsonUtility.FromJson<DataAudioSettings>(gameData);

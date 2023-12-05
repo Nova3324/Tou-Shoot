@@ -20,7 +20,7 @@ public class SaveData : MonoBehaviour
     }
     private void Start()
     {
-        if(File.Exists(Application.dataPath + "/HighScoreSave.json"))
+        if (File.Exists(Application.dataPath + "/Saves/HighScoreSave.json"))
             LoadFromJSON();
         else
             SaveToJSON();
@@ -30,13 +30,13 @@ public class SaveData : MonoBehaviour
         m_saveGameData.m_highScore = Score.Instance.m_highScore;
 
         string gameData = JsonUtility.ToJson(m_saveGameData);
-        File.WriteAllText(Application.dataPath + "/HighScoreSave.json", gameData);
+        File.WriteAllText(Application.dataPath + "/Saves/HighScoreSave.json", gameData);
         Debug.Log("Sauvegarde effectuée");
     }
 
     public void LoadFromJSON()
     {
-        string filePath = Application.dataPath + "/HighScoreSave.json";
+        string filePath = Application.dataPath + "/Saves/HighScoreSave.json";
         string gameData = File.ReadAllText(filePath);
 
         m_saveGameData = JsonUtility.FromJson<DataHighScore>(gameData);
