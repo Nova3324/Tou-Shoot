@@ -8,9 +8,6 @@ public class SaveAudioSettings : MonoBehaviour
 
     private string saveFolderPath = Application.dataPath + "/Saves";
 
-
-    [SerializeField] private GameObject m_settings;
-
     public static SaveAudioSettings Instance;
     private void Awake()
     {
@@ -33,12 +30,10 @@ public class SaveAudioSettings : MonoBehaviour
         if (File.Exists(Application.dataPath + "/Saves/AudioSettings.json"))
         {
             LoadFromJSON();
-            StartCoroutine(HideSettings()); 
         }
         else
         {
             SaveToJSON();
-            StartCoroutine(HideSettings());
         }
     }
 
@@ -83,12 +78,4 @@ public class SaveAudioSettings : MonoBehaviour
         AudioSettings.Instance.m_soundsSlider.value = m_DataAudioSettings.sounddsSlider;
         Debug.Log("Reset Sounds");
     }
-   
-
-    public IEnumerator HideSettings()
-    {
-        yield return new WaitForSeconds(0.3f); 
-        m_settings.SetActive(false);
-    }
-
 }

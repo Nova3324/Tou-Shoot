@@ -17,9 +17,9 @@ public class ScoreUI : MonoBehaviour
 
     void Update()
     {
-        if (File.Exists(Application.dataPath + "/HighScoreSave.json"))
+        if (File.Exists(Application.dataPath + "/Saves/HighScoreSave.json"))
         {
-            string filePath = Application.dataPath + "/HighScoreSave.json";
+            string filePath = Application.dataPath + "/Saves/HighScoreSave.json";
             string gameData = File.ReadAllText(filePath);
 
             m_saveGameData = JsonUtility.FromJson<DataHighScore>(gameData);

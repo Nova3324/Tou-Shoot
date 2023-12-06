@@ -20,11 +20,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject m_infini;
     [SerializeField] private GameObject m_fast;
 
-    [Header("Animator")]
-    [SerializeField] private Animator m_transitionAnimator;
-    [SerializeField] private Animator m_buttonsAnimator;
-    [SerializeField] private Animator m_gamemodeAnimator;
-
     [Header("Sliders")]
     [SerializeField] private Slider m_musicsSlider;
     [SerializeField] private Slider m_soundsSlider;
@@ -32,12 +27,14 @@ public class MainMenuManager : MonoBehaviour
     private float m_currentMusicSliderValue;
     private float m_currentSoundsSliderValue;
 
+    private MainMenuAnimationsManager m_animationManager;
+
     private void Start()
     {
-        Invoke("MainMenuButtonsAnimation", 1f);
-
         m_currentMusicSliderValue = m_musicsSlider.value;
         m_currentSoundsSliderValue = m_soundsSlider.value;
+
+        m_animationManager = MainMenuAnimationsManager.Instance;
     }
 
     private void Update()
@@ -61,11 +58,14 @@ public class MainMenuManager : MonoBehaviour
 
     /*---------------------------------------------------------------------------Main Menu----------------------------------------------------------------------------*/
 
+    public void MainMenuMode()
+    {
+        m_animationManager.MainMenuToMode();
+    }
+
     public void MainMenuSettings()
     {
-        m_settings.SetActive(true);
-        m_mainmenu.SetActive(false);
-        GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 0);
+        m_animationManager.MainMenuToSettings();
     }
 
     public void MainMenuCredits()
@@ -80,27 +80,11 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    private void MainMenuButtonsAnimation()
-    {
-        m_buttonsAnimator.SetBool("MainMenuButtons", true);
-    }
-
-    public void MainMenuMode()
-    {
-        m_gamemodeAnimator.SetBool("MainMenu", true);
-        m_gamemodeAnimator.SetBool("GameMode", false);
-
-        m_buttonsAnimator.SetBool("GameMode", true);
-        m_buttonsAnimator.SetBool("MainMenu", false);
-        m_buttonsAnimator.SetBool("MainMenuButtons", false);
-    }
-
     /*---------------------------------------------------------------------------Settings----------------------------------------------------------------------------*/
 
     public void SettingsBack()
     {
-        m_settings.SetActive(false);
-        m_mainmenu.SetActive(true);
+        m_animationManager.SettingsToMainMenu();
     }
 
     public void SettingsReset()
@@ -124,7 +108,7 @@ public class MainMenuManager : MonoBehaviour
     public void SettingsNo()
     {
         EnableButtons();
-        HideVerif();
+        m_animationManager.SecurityToSettings();
     }
 
     public void SettingsApply()
@@ -143,38 +127,11 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    private IEnumerator SetBoolToZero()
-    {
-        yield return new WaitForSeconds(0.6f);
-        GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 0);
-    }
-
-    private void DisplayNoFile()
-    {
-        GameObject.Find("NoFiles").GetComponent<Animator>().SetBool("NoFile", true);
-    }
-
-    private void HideNoFile()
-    {
-        GameObject.Find("NoFiles").GetComponent<Animator>().SetBool("NoFile", false);
-    }
-
-    private void DisplayVerif()
-    {
-        GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 1);
-    }
-
-    private void HideVerif()
-    {
-        GameObject.Find("Check").GetComponent<Animator>().SetInteger("Check", 2);
-        StartCoroutine(SetBoolToZero());
-    }
-
     private void CheckReset()
     {
-        if (File.Exists(Application.dataPath + "/HighScoreSave.json"))
+        if (File.Exists(Application.dataPath + "/Saves/HighScoreSave.json"))
         {
-            DisplayVerif();
+            m_animationManager.SettingsToSecurity();
         }
         else
         {
@@ -182,15 +139,20 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    private void DisplayNoFile()
+    {
+        m_animationManager.SettingsToNoFiles();
+    }
+
     private void ResetHighScore()
     {
-        File.Delete(Application.dataPath + "/HighScoreSave.json");
-        HideVerif();
+        File.Delete(Application.dataPath + "/Saves/HighScoreSave.json");
+        m_animationManager.SecurityToSettings();
     }
 
     private void ContinueInNoFile()
     {
-        HideNoFile();
+        m_animationManager.NoFilesToSettings();
     }
 
     /*---------------------------------------------------------------------------Credits----------------------------------------------------------------------------*/
@@ -200,8 +162,12 @@ public class MainMenuManager : MonoBehaviour
         m_credits.SetActive(false);
         m_mainmenu.SetActive(true);
     }
-    /*---------------------------------------------------------------------------Credits----------------------------------------------------------------------------*/
+    /*---------------------------------------------------------------------------Mode----------------------------------------------------------------------------*/
 
+    public void GameModeBack()
+    {
+        m_animationManager.ModeToMainMenu();
+    }
     public void GameModeFastSelected()
     {
         m_fast.transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
@@ -226,23 +192,14 @@ public class MainMenuManager : MonoBehaviour
     {
         m_fast.transform.localScale = new Vector3(1f, 1f, 1f);
         StartCoroutine(Fast());
-        m_transitionAnimator.SetBool("Transition", true);
+        m_animationManager.ModeToGame();
     }
 
     public void GameModeInfinite()
     {
         m_infini.transform.localScale = new Vector3(1f, 1f, 1f);
         StartCoroutine(Infini());
-        m_transitionAnimator.SetBool("Transition", true);
-    }
-
-    public void GameModeBack()
-    {
-        m_gamemodeAnimator.SetBool("GameMode", true);
-        m_gamemodeAnimator.SetBool("MainMenu", false);
-
-        m_buttonsAnimator.SetBool("GameMode", false);
-        m_buttonsAnimator.SetBool("MainMenu", true);
+        m_animationManager.ModeToGame();
     }
 
     private IEnumerator Fast()
