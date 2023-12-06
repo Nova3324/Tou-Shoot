@@ -30,9 +30,6 @@ public class SaveAudioSettings : MonoBehaviour
         {
             Directory.CreateDirectory(saveFolderPath);
         }
-
-        Debug.Log(saveFolderPath);
-
         if (File.Exists(Application.dataPath + "/Saves/AudioSettings.json"))
         {
             LoadFromJSON();
@@ -92,7 +89,6 @@ public class SaveAudioSettings : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f); 
         m_settings.SetActive(false);
-        Debug.Log("test");
     }
 
 }
