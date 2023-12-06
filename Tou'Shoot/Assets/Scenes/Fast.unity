@@ -2890,6 +2890,7 @@ GameObject:
   - component: {fileID: 395775648}
   - component: {fileID: 395775647}
   - component: {fileID: 395775649}
+  - component: {fileID: 395775650}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2968,13 +2969,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2eb5f273c4b4b43ba020853e2c0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resume: {fileID: 378019606}
-  m_retry: {fileID: 328015702}
-  m_settings: {fileID: 976019298}
-  m_quit: {fileID: 241023670}
-  m_pause: {fileID: 1456629387}
-  m_settingsMenu: {fileID: 1094771086}
-  m_playerInputs: {fileID: 655908343}
+--- !u!114 &395775650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395775645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: MenuSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &442981667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +4002,7 @@ GameObject:
   - component: {fileID: 647171586}
   - component: {fileID: 647171585}
   - component: {fileID: 647171587}
+  - component: {fileID: 647171588}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -4047,13 +4081,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2eb5f273c4b4b43ba020853e2c0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resume: {fileID: 378019606}
-  m_retry: {fileID: 328015702}
-  m_settings: {fileID: 976019298}
-  m_quit: {fileID: 241023670}
-  m_pause: {fileID: 1456629387}
-  m_settingsMenu: {fileID: 1094771086}
-  m_playerInputs: {fileID: 655908343}
+--- !u!114 &647171588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647171583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: MenuResume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &650250120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,6 +4765,7 @@ GameObject:
   - component: {fileID: 810803834}
   - component: {fileID: 810803833}
   - component: {fileID: 810803835}
+  - component: {fileID: 810803836}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -4777,13 +4844,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2eb5f273c4b4b43ba020853e2c0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resume: {fileID: 378019606}
-  m_retry: {fileID: 328015702}
-  m_settings: {fileID: 976019298}
-  m_quit: {fileID: 241023670}
-  m_pause: {fileID: 1456629387}
-  m_settingsMenu: {fileID: 1094771086}
-  m_playerInputs: {fileID: 655908343}
+--- !u!114 &810803836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810803831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: MenuRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &884367178
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,10 +5154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1144635487042053775, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 289.79
-      objectReference: {fileID: 0}
+    - target: {fileID: 1081739509734555862, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_soundOnClick
+      value: 
+      objectReference: {fileID: 81802064}
     - target: {fileID: 1155937209937797124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5155,41 +5254,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3504921276353643045, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.0000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585025239070202124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 604.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585025239070202124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -432
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585025239070202124, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -52.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563782061243227372, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 601.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563782061243227372, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -432
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563782061243227372, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 156
-      objectReference: {fileID: 0}
+    - target: {fileID: 3221428587165164590, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_soundOnClick
+      value: 
+      objectReference: {fileID: 81802064}
+    - target: {fileID: 3646368593263851452, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
+      propertyPath: m_soundOnClick
+      value: 
+      objectReference: {fileID: 81802064}
     - target: {fileID: 7965265634920405453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_Name
       value: Endgame
-      objectReference: {fileID: 0}
-    - target: {fileID: 7965265634920405453, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8300344768430041975, guid: 32ee188b106a2ae4ba379b87f452d3c6, type: 3}
       propertyPath: m_IsActive
@@ -5351,6 +5426,7 @@ GameObject:
   - component: {fileID: 1026354394}
   - component: {fileID: 1026354393}
   - component: {fileID: 1026354395}
+  - component: {fileID: 1026354396}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -5429,13 +5505,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2eb5f273c4b4b43ba020853e2c0726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resume: {fileID: 378019606}
-  m_retry: {fileID: 328015702}
-  m_settings: {fileID: 976019298}
-  m_quit: {fileID: 241023670}
-  m_pause: {fileID: 1456629387}
-  m_settingsMenu: {fileID: 1094771086}
-  m_playerInputs: {fileID: 655908343}
+--- !u!114 &1026354396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026354391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: MenuQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1053423884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,7 +5655,7 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -621, y: -230}
   m_SizeDelta: {x: 300, y: 100}
-  m_Pivot: {x: 0.49999994, y: 0.4999998}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120228408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5595,18 +5703,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120228406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c941f6fb376f8b14d9bd0fde60752d82, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_apply: {fileID: 442981669}
-  m_back: {fileID: 996210550}
-  m_settings: {fileID: 1094771086}
-  m_pause: {fileID: 1456629387}
-  m_disableButtons: {fileID: 21300000, guid: bc2d5d58ddead8b46ae8cadbca8006d0, type: 3}
-  m_enableButton: {fileID: 21300000, guid: f3ef1a001f1371542844e1b1f4658ca8, type: 3}
-  m_backSprite: {fileID: 1326107452}
-  m_musicsSlider: {fileID: 1929107667}
-  m_soundsSlider: {fileID: 197990713}
+  m_interactable: 0
+  m_disable: {fileID: 21300000, guid: bc2d5d58ddead8b46ae8cadbca8006d0, type: 3}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: SettingsApply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1139806975
 GameObject:
   m_ObjectHideFlags: 0
@@ -6369,7 +6495,7 @@ GameObject:
   - component: {fileID: 1326107450}
   - component: {fileID: 1326107453}
   - component: {fileID: 1326107452}
-  - component: {fileID: 1326107451}
+  - component: {fileID: 1326107454}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -6398,27 +6524,6 @@ RectTransform:
   m_AnchoredPosition: {x: -271, y: -230}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1326107451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326107449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c941f6fb376f8b14d9bd0fde60752d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_apply: {fileID: 996210550}
-  m_back: {fileID: 996210550}
-  m_settings: {fileID: 1094771086}
-  m_pause: {fileID: 1456629387}
-  m_disableButtons: {fileID: 21300000, guid: bc2d5d58ddead8b46ae8cadbca8006d0, type: 3}
-  m_enableButton: {fileID: 21300000, guid: f3ef1a001f1371542844e1b1f4658ca8, type: 3}
-  m_backSprite: {fileID: 1326107452}
-  m_musicsSlider: {fileID: 1929107667}
-  m_soundsSlider: {fileID: 197990713}
 --- !u!114 &1326107452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6457,6 +6562,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326107449}
   m_CullTransparentMesh: 1
+--- !u!114 &1326107454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326107449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactable: 1
+  m_disable: {fileID: 21300000, guid: bc2d5d58ddead8b46ae8cadbca8006d0, type: 3}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 81802064}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1351829142}
+        m_TargetAssemblyTypeName: GameMenuManager, Assembly-CSharp
+        m_MethodName: SettingsBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1351829137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,8 +6613,9 @@ GameObject:
   - component: {fileID: 1351829140}
   - component: {fileID: 1351829139}
   - component: {fileID: 1351829138}
+  - component: {fileID: 1351829142}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6562,6 +6707,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1351829142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351829137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a300e7f6e59fba045b1b625165952362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_settingsBackButton: {fileID: 1326107454}
+  m_settingsApplyButton: {fileID: 1120228410}
+  m_settings: {fileID: 1094771086}
+  m_pause: {fileID: 1456629387}
+  m_musicsSlider: {fileID: 1929107667}
+  m_soundsSlider: {fileID: 197990713}
+  m_playerInputs: {fileID: 655908343}
 --- !u!1 &1357513981
 GameObject:
   m_ObjectHideFlags: 0

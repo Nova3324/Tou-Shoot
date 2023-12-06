@@ -47,7 +47,8 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (m_interactable)
         {
             m_onEnter.Invoke();
-            GetComponentInChildren<TMP_Text>().color = m_enterColor;
+            if(GetComponentInChildren<TMP_Text>() != null)
+                GetComponentInChildren<TMP_Text>().color = m_enterColor;
         }
     }
 
@@ -56,7 +57,8 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (m_interactable)
         {
             m_onExit.Invoke();
-            GetComponentInChildren<TMP_Text>().color = m_exitColor;
+            if (GetComponentInChildren<TMP_Text>() != null)
+                GetComponentInChildren<TMP_Text>().color = m_exitColor;
         }
     }
 
@@ -65,7 +67,8 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (m_interactable)
         {
             m_onClick.Invoke();
-            GetComponentInChildren<TMP_Text>().color = m_clickColor;
+            if (GetComponentInChildren<TMP_Text>() != null)
+                GetComponentInChildren<TMP_Text>().color = m_clickColor;
             m_soundOnClick.Play();
         }
     }

@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3236704317656598273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -348,8 +348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -432, y: -52.35998}
-  m_SizeDelta: {x: 221.62, y: 54.44}
+  m_AnchoredPosition: {x: -432, y: 156}
+  m_SizeDelta: {x: 601.33, y: 54.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3267748593670394030
 CanvasRenderer:
@@ -483,8 +483,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -432, y: -52.359985}
-  m_SizeDelta: {x: 221.62, y: 54.44}
+  m_AnchoredPosition: {x: -432, y: -52.36}
+  m_SizeDelta: {x: 604.34, y: 54.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7252428624261027187
 CanvasRenderer:
@@ -981,7 +981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640.25, y: -0.00000095367}
+  m_AnchoredPosition: {x: -640.25, y: -0.0000009536743}
   m_SizeDelta: {x: 200.66, y: 50.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1676205017366952155
@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 654940123371404257}
   - component: {fileID: 4919739042139138799}
   - component: {fileID: 8466522621896732874}
-  - component: {fileID: 6503185860997657338}
+  - component: {fileID: 3221428587165164590}
   m_Layer: 5
   m_Name: QuitWin
   m_TagString: Untagged
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6503185860997657338
+--- !u!114 &3221428587165164590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1303,12 +1303,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4075981359284040932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec68e74e7d81a64792b2ea43dd8945d, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_quitWin: {fileID: 1082553899817198494}
-  m_quitLose: {fileID: 5836908887612804962}
-  m_retry: {fileID: 3250934981473657276}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 0}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6000501777598220780}
+        m_TargetAssemblyTypeName: EndgameMenuManager, Assembly-CSharp
+        m_MethodName: EndGameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5177143215631977353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1344,7 @@ GameObject:
   - component: {fileID: 4062170166187172414}
   - component: {fileID: 7844221089733678740}
   - component: {fileID: 900680097536757541}
-  - component: {fileID: 4100256289205404574}
+  - component: {fileID: 3646368593263851452}
   m_Layer: 5
   m_Name: QuitLose
   m_TagString: Untagged
@@ -1387,7 +1411,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4100256289205404574
+--- !u!114 &3646368593263851452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1396,12 +1420,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 5177143215631977353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec68e74e7d81a64792b2ea43dd8945d, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_quitWin: {fileID: 1082553899817198494}
-  m_quitLose: {fileID: 5836908887612804962}
-  m_retry: {fileID: 3250934981473657276}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 0}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6000501777598220780}
+        m_TargetAssemblyTypeName: EndgameMenuManager, Assembly-CSharp
+        m_MethodName: EndGameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5914165624610125331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -432, y: 133}
+  m_AnchoredPosition: {x: -432, y: 289.79}
   m_SizeDelta: {x: 425.49, y: 68.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8798696331886708748
@@ -1624,7 +1672,7 @@ GameObject:
   - component: {fileID: 3742347851743663214}
   - component: {fileID: 8836161549103541310}
   - component: {fileID: 2306713383222469651}
-  - component: {fileID: 5261247527887445508}
+  - component: {fileID: 1081739509734555862}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -1691,7 +1739,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5261247527887445508
+--- !u!114 &1081739509734555862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1700,12 +1748,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 7246554002272398197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec68e74e7d81a64792b2ea43dd8945d, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_quitWin: {fileID: 1082553899817198494}
-  m_quitLose: {fileID: 5836908887612804962}
-  m_retry: {fileID: 3250934981473657276}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 0}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6000501777598220780}
+        m_TargetAssemblyTypeName: EndgameMenuManager, Assembly-CSharp
+        m_MethodName: EndGameRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7507070390015850933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1926,7 @@ GameObject:
   - component: {fileID: 5304804856263664932}
   - component: {fileID: 5006304688512206815}
   - component: {fileID: 1892785362813755429}
+  - component: {fileID: 6000501777598220780}
   m_Layer: 5
   m_Name: Endgame
   m_TagString: Untagged
@@ -1876,7 +1949,7 @@ RectTransform:
   - {fileID: 3236704317656598273}
   - {fileID: 208863049998614113}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1965,6 +2038,18 @@ MonoBehaviour:
   m_loseScoreUI: {fileID: 4576081604226593323}
   m_loseTimer: {fileID: 1588208542904456757}
   m_winTimer: {fileID: 2629092516679000425}
+--- !u!114 &6000501777598220780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965265634920405453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3483feead6fab4584986887c88b167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8300344768430041975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +2065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &208863049998614113
 RectTransform:
   m_ObjectHideFlags: 0

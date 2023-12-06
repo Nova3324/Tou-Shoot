@@ -2,17 +2,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private ButtonCustom m_settingsBackButton;
     [SerializeField] private ButtonCustom m_settingsResetButton;
+    [SerializeField] private ButtonCustom m_settingsApplyButton;
 
     [Header("Menus")]
     [SerializeField] private GameObject m_credits;
     [SerializeField] private GameObject m_settings;
     [SerializeField] private GameObject m_mainmenu;
+
+    [Header("Buttons")]
+    [SerializeField] private GameObject m_infini;
+    [SerializeField] private GameObject m_fast;
 
     [Header("Animator")]
     [SerializeField] private Animator m_transitionAnimator;
@@ -43,13 +49,14 @@ public class MainMenuManager : MonoBehaviour
     {
         m_settingsBackButton.m_interactable = false;
         m_settingsResetButton.m_interactable = false;
+        m_settingsApplyButton.m_interactable = true;
     }
 
-    private IEnumerator EnableButtons()
+    private void EnableButtons()
     {
-        yield return new WaitForSeconds(0.5f);
         m_settingsBackButton.m_interactable = true;
         m_settingsResetButton.m_interactable = true;
+        m_settingsApplyButton.m_interactable = false;
     }
 
     /*---------------------------------------------------------------------------Main Menu----------------------------------------------------------------------------*/
@@ -104,26 +111,26 @@ public class MainMenuManager : MonoBehaviour
 
     public void SettingsContinue()
     {
-        StartCoroutine(EnableButtons());
+        EnableButtons();
         ContinueInNoFile();
     }
 
     public void SettingsYes()
     {
-        StartCoroutine(EnableButtons());
+        EnableButtons();
         ResetHighScore();
     }
 
     public void SettingsNo()
     {
-        StartCoroutine(EnableButtons());
+        EnableButtons();
         HideVerif();
     }
 
     public void SettingsApply()
     {
         SaveAudioSettings.Instance.SaveToJSON();
-        StartCoroutine(EnableButtons());
+        EnableButtons();
     }
 
     private void ApplyButton()
@@ -192,5 +199,66 @@ public class MainMenuManager : MonoBehaviour
     {
         m_credits.SetActive(false);
         m_mainmenu.SetActive(true);
+    }
+    /*---------------------------------------------------------------------------Credits----------------------------------------------------------------------------*/
+
+    public void GameModeFastSelected()
+    {
+        m_fast.transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
+    }
+
+    public void GameModeInfiniteSelected()
+    {
+        m_infini.transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
+    }
+
+    public void GameModeFastUnselect()
+    {
+        m_fast.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
+    public void GameModeInfiniteUnselect()
+    {
+        m_infini.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
+    public void GameModeFast()
+    {
+        m_fast.transform.localScale = new Vector3(1f, 1f, 1f);
+        StartCoroutine(Fast());
+        m_transitionAnimator.SetBool("Transition", true);
+    }
+
+    public void GameModeInfinite()
+    {
+        m_infini.transform.localScale = new Vector3(1f, 1f, 1f);
+        StartCoroutine(Infini());
+        m_transitionAnimator.SetBool("Transition", true);
+    }
+
+    public void GameModeBack()
+    {
+        m_gamemodeAnimator.SetBool("GameMode", true);
+        m_gamemodeAnimator.SetBool("MainMenu", false);
+
+        m_buttonsAnimator.SetBool("GameMode", false);
+        m_buttonsAnimator.SetBool("MainMenu", true);
+    }
+
+    private IEnumerator Fast()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        SceneManager.LoadScene("Fast");
+        if (Time.timeScale != 1)
+            Time.timeScale = 1.0f;
+    }
+
+    private IEnumerator Infini()
+    {
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadScene("Infini");
+        if (Time.timeScale != 1)
+            Time.timeScale = 1.0f;
     }
 }

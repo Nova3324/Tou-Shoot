@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 111522690}
   - component: {fileID: 111522692}
   - component: {fileID: 111522691}
-  - component: {fileID: 111522693}
+  - component: {fileID: 111522694}
   m_Layer: 5
   m_Name: Infini
   m_TagString: Untagged
@@ -377,7 +377,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111522689}
   m_CullTransparentMesh: 1
---- !u!114 &111522693
+--- !u!114 &111522694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,15 +386,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 111522689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c17e2c6969f83b4b9af51cc1688d407, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_backText: {fileID: 851686435}
-  m_infini: {fileID: 111522689}
-  m_fast: {fileID: 1289192235}
-  m_mainMenuAnimator: {fileID: 1532097673}
-  m_gamemodeAnimator: {fileID: 1684861918}
-  m_transitionAnimator: {fileID: 620313452}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 0, g: 0, b: 0, a: 0}
+  m_exitColor: {r: 0, g: 0, b: 0, a: 0}
+  m_clickColor: {r: 0, g: 0, b: 0, a: 0}
+  m_soundOnClick: {fileID: 515095522}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeInfinite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeInfiniteSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeInfiniteUnselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &122770228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,7 +5823,7 @@ GameObject:
   - component: {fileID: 1289192236}
   - component: {fileID: 1289192238}
   - component: {fileID: 1289192237}
-  - component: {fileID: 1289192239}
+  - component: {fileID: 1289192240}
   m_Layer: 5
   m_Name: Fast
   m_TagString: Untagged
@@ -5845,7 +5890,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289192235}
   m_CullTransparentMesh: 1
---- !u!114 &1289192239
+--- !u!114 &1289192240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5854,15 +5899,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289192235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c17e2c6969f83b4b9af51cc1688d407, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_backText: {fileID: 851686435}
-  m_infini: {fileID: 111522689}
-  m_fast: {fileID: 1289192235}
-  m_mainMenuAnimator: {fileID: 1532097673}
-  m_gamemodeAnimator: {fileID: 1684861918}
-  m_transitionAnimator: {fileID: 620313452}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 0, g: 0, b: 0, a: 0}
+  m_exitColor: {r: 0, g: 0, b: 0, a: 0}
+  m_clickColor: {r: 0, g: 0, b: 0, a: 0}
+  m_soundOnClick: {fileID: 515095522}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeFast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeFastSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeFastUnselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1321058243
 GameObject:
   m_ObjectHideFlags: 0
@@ -6395,7 +6485,7 @@ GameObject:
   - component: {fileID: 1428704495}
   - component: {fileID: 1428704498}
   - component: {fileID: 1428704497}
-  - component: {fileID: 1428704499}
+  - component: {fileID: 1428704500}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -6462,7 +6552,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428704494}
   m_CullTransparentMesh: 1
---- !u!114 &1428704499
+--- !u!114 &1428704500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6471,15 +6561,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1428704494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c17e2c6969f83b4b9af51cc1688d407, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_backText: {fileID: 851686435}
-  m_infini: {fileID: 111522689}
-  m_fast: {fileID: 1289192235}
-  m_mainMenuAnimator: {fileID: 1532097673}
-  m_gamemodeAnimator: {fileID: 1684861918}
-  m_transitionAnimator: {fileID: 620313452}
+  m_interactable: 1
+  m_disable: {fileID: 0}
+  m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
+  m_exitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_clickColor: {r: 1, g: 1, b: 1, a: 1}
+  m_soundOnClick: {fileID: 515095522}
+  m_onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444529188}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GameModeBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1444529183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,9 +6716,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_settingsBackButton: {fileID: 1782519840}
   m_settingsResetButton: {fileID: 1661281401}
+  m_settingsApplyButton: {fileID: 2011174435}
   m_credits: {fileID: 879443280}
   m_settings: {fileID: 199765592}
   m_mainmenu: {fileID: 1532097671}
+  m_infini: {fileID: 111522689}
+  m_fast: {fileID: 1289192235}
   m_transitionAnimator: {fileID: 620313452}
   m_buttonsAnimator: {fileID: 1532097673}
   m_gamemodeAnimator: {fileID: 1684861918}
@@ -9837,7 +9951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb7117b10056264d8322d3aee46abff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_interactable: 1
+  m_interactable: 0
   m_disable: {fileID: 21300000, guid: bc2d5d58ddead8b46ae8cadbca8006d0, type: 3}
   m_enterColor: {r: 1, g: 0, b: 0.8980392, a: 1}
   m_exitColor: {r: 1, g: 1, b: 1, a: 1}
