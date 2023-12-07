@@ -8,9 +8,8 @@ public class EnableGameObject : MonoBehaviour
     private Animator m_animator;
     void Start()
     {
-        m_animator = GetComponent<Animator>();
-        
-        Invoke("TransitionAnimation", 2f);
+        m_animator = GetComponentInParent<Animator>();
+        StartCoroutine(LoadingScreen());
         Invoke("EnableGameObjects", 3f);
     }
 
@@ -22,8 +21,9 @@ public class EnableGameObject : MonoBehaviour
         }
     }
 
-    private void TransitionAnimation()
+    private IEnumerator LoadingScreen()
     {
-        m_animator.SetBool("Transition", true);
+        yield return new WaitForSeconds(2f);
+        m_animator.SetBool("Loading", true);
     }
 }
