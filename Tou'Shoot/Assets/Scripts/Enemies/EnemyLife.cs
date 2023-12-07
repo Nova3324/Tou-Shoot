@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
-    [SerializeField] private int m_life = 10;
+    public int m_life;
+    public int m_maxLife;
     [SerializeField] private GameObject m_explosionPrefab;
 
-    private void Update()
+    private void Start()
     {
-        
+        m_life = m_maxLife;    
     }
+
 
     public void TakeDamage(int damage)
     {
         m_life -= damage;
-        Debug.Log(m_life);
     }
 
     public void Dead()
@@ -23,9 +24,15 @@ public class EnemyLife : MonoBehaviour
         if(m_life <= 0)
         {
             EnemyManager.Instance.m_enemiesOnTheMap.Remove(transform.parent.parent.gameObject);
-            EndGame.Instance.CheckIfTheGameIsFinish();
             Score.Instance.EnemyDeath();
             EnemyManager.Instance.Explosion(m_explosionPrefab, transform.position, Quaternion.identity);
+            if(!Enemies.Instance.m_infini)
+                EndGame.Instance.CheckIfTheGameIsFinish();
+
+            if (Enemies.Instance.m_infini)
+            {
+                Enemies.Instance.hasSpawnedOnce = false;
+            }
             StartCoroutine(DisableEnemy());
 
             //Audio
