@@ -7,10 +7,17 @@ public class PlayerDeath : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy Bullet"))
         {
-            Debug.Log("Player Death");
-            SaveData.Instance.SaveToJSON();
             if(!m_godMode)
-                EndGame.Instance.DisplayTheRightMenu();
+            {
+                PlayerLife.Instance.m_life -= 1;
+
+                if(PlayerLife.Instance.m_life <= 0)
+                {
+                    Debug.Log("Player Death");
+                    EndGame.Instance.DisplayTheRightMenu();
+                    SaveData.Instance.SaveToJSON();
+                }
+            }
         }
     }
 }
