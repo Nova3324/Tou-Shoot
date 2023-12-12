@@ -12,7 +12,7 @@ public class EnemiesMovement : MonoBehaviour
     [SerializeField] private int m_index;
     private float m_elapsedTime;
     private bool m_roundTrip = true;
-    private bool m_canMove = true;
+    public bool m_canMove = true;
     [SerializeField] private bool m_loop;
     [SerializeField] private AnimationCurve m_curve; 
     void Start()
