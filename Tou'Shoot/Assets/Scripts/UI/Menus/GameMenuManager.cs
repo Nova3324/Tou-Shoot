@@ -81,6 +81,7 @@ public class GameMenuManager : MonoBehaviour
     public void SettingsApply()
     {
         EnableButtons();
+        SaveAudioSettings.Instance.SaveToJSON();
     }
 
     public void SettingsBack()
