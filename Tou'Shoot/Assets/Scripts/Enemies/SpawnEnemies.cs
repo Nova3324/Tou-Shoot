@@ -106,11 +106,6 @@ public class Enemies : MonoBehaviour
             m_canIncreaseLife = true;
             hasSpawnedOnce = true;
         }
-
-        if (hasSpawnedOnce && m_enemyCount % m_enemyList.Count == 0)
-        {
-            
-        }
     }
 
     private void Difficulty()
