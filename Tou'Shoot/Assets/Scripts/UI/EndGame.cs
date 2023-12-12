@@ -15,6 +15,9 @@ public class EndGame : MonoBehaviour
     [SerializeField] private TMP_Text m_loseScoreUI;
     [SerializeField] private TMP_Text m_loseTimer;
     [SerializeField] private TMP_Text m_winTimer;
+    [SerializeField] private TMP_Text m_life;
+
+    [SerializeField] private bool m_infini;
     private void Awake()
     {
         if(Instance == null)
@@ -49,8 +52,18 @@ public class EndGame : MonoBehaviour
             m_timerInUI.SetActive(false);
             m_timeUI.SetActive(false);
             //m_loseScoreUI.SetText(Score.Instance.m_score.ToString());
-            float timerRound = Mathf.Round(Timer.Instance.m_timer * 100f) / 100f;
-            m_loseTimer.SetText(timerRound.ToString());
+            if(!m_infini)
+            {
+                float timerRound = Mathf.Round(Timer.Instance.m_timer * 100f) / 100f;
+                m_loseTimer.SetText(timerRound.ToString());
+                m_life.SetText("0");
+            }
+            else if(m_infini)
+            {
+                m_loseTimer.SetText(Score.Instance.m_score.ToString());
+                m_life.SetText("0");
+            }
+
             Time.timeScale = 0;
             GameObject.Find("Player").gameObject.SetActive(false);
         }
@@ -62,8 +75,18 @@ public class EndGame : MonoBehaviour
         m_win.SetActive(true);
         m_timerInUI.SetActive(false);
         m_timeUI.SetActive(false);
-        float timerRound = Mathf.Round(Timer.Instance.m_timer * 100f) / 100f;
-        m_winTimer.SetText(timerRound.ToString());
+        if(!m_infini)
+        {
+            float timerRound = Mathf.Round(Timer.Instance.m_timer * 100f) / 100f;
+            m_winTimer.SetText(timerRound.ToString());
+            m_life.SetText("0");
+        }
+        else if(m_infini)
+        {
+            m_winTimer.SetText(Score.Instance.m_score.ToString());
+            m_life.SetText("0");
+        }
+
         Time.timeScale = 0;
         GameObject.Find("Player").gameObject.SetActive(false);
     }

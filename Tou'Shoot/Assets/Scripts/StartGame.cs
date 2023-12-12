@@ -62,7 +62,6 @@ public class StartGame : MonoBehaviour
             {
                 GameObject.Find("Timer").gameObject.SetActive(false);
             }
-            m_timerinUI.SetActive(true);
         }
     }  
     

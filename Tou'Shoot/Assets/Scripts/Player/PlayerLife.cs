@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
     public int m_life;
+    [SerializeField] private TMP_Text m_lifeText;
 
     public static PlayerLife Instance;
 
@@ -17,13 +19,8 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        m_lifeText.SetText(m_life.ToString());     
     }
 }
