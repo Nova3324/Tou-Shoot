@@ -19,6 +19,10 @@ public class GameModeManager : MonoBehaviour
     [SerializeField] private GameObject m_leftArrow;
     [SerializeField] private GameObject m_rightArrow;
 
+    [Header("Text")]
+    [SerializeField] private GameObject m_leftArrowBack;
+    [SerializeField] private GameObject m_rightArrowBack;
+
     private Animator m_animator;
 
     private void Start()
@@ -50,12 +54,14 @@ public class GameModeManager : MonoBehaviour
     {
         m_infiniExplanation.SetActive(true);
         m_mainMenuGameMode.SetActive(false);
+        m_infini.transform.localScale = Vector3.one;
     }
 
     public void FastButton()
     {
         m_fastExplanation.SetActive(true);
         m_mainMenuGameMode.SetActive(false);
+        m_fast.transform.localScale = Vector3.one;
     }
 
     public void Back()
@@ -80,5 +86,25 @@ public class GameModeManager : MonoBehaviour
     public void LeftArrow() 
     {
         m_animator.SetBool("Bonus", false);
+    }
+
+    public void LeftArrowSelected()
+    {
+        m_leftArrowBack.SetActive(true);
+    }
+
+    public void LeftArrowUnselected()
+    {
+        m_leftArrowBack.SetActive(false);
+    }
+
+    public void RightArrowSelected()
+    {
+        m_rightArrowBack.SetActive(true);
+    }
+
+    public void RightArrowUnselected()
+    {
+        m_rightArrowBack.SetActive(false);
     }
 }

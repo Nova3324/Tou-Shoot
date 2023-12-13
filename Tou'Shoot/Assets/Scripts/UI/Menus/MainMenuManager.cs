@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.IO;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -15,14 +16,19 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject m_credits;
     [SerializeField] private GameObject m_settings;
     [SerializeField] private GameObject m_mainmenu;
+    [SerializeField] private GameObject m_controls;
 
     [Header("Buttons")]
     [SerializeField] private GameObject m_infini;
     [SerializeField] private GameObject m_fast;
+    [SerializeField] private GameObject m_controlsButton;
 
     [Header("Sliders")]
     [SerializeField] private Slider m_musicsSlider;
     [SerializeField] private Slider m_soundsSlider;
+
+    [Header("Texts")]
+    [SerializeField] private GameObject m_controlsText;
 
     private float m_currentMusicSliderValue;
     private float m_currentSoundsSliderValue;
@@ -81,7 +87,30 @@ public class MainMenuManager : MonoBehaviour
     }
 
     /*---------------------------------------------------------------------------Settings----------------------------------------------------------------------------*/
+    public void ControlsSelected()
+    {
+        m_controlsButton.transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
+        m_controlsText.SetActive(true);
+    }
 
+    public void ControlsUnselected()
+    {
+        m_controlsButton.transform.localScale = Vector3.one;    
+        m_controlsText.SetActive(false);
+    }
+
+    public void Controls()
+    {
+        m_controlsButton.transform.localScale = Vector3.one;
+        m_controls.SetActive(true);
+        m_settings.SetActive(false);
+    }
+
+    public void ControlsToSettings()
+    {
+        m_controls.SetActive(false);
+        m_settings.SetActive(true);
+    }
     public void SettingsBack()
     {
         m_animationManager.SettingsToMainMenu();

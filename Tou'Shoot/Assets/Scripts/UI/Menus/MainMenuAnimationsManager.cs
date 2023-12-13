@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuAnimationsManager : MonoBehaviour
@@ -76,6 +74,16 @@ public class MainMenuAnimationsManager : MonoBehaviour
     public void NoFilesToSettings()
     {
         m_settingsAnimator.SetBool("NoFiles", false);
+    }
+
+    public void SettingsToControls()
+    {
+        m_settingsAnimator.SetBool("Controls", true);
+    }
+
+    public void ControlsToSettings()
+    {
+        m_settingsAnimator.SetBool("Controls", false);
     }
     /*---------------------------------------------------------------------------Events----------------------------------------------------------------------------*/
     public void SetBoolMainMenuButtons()
